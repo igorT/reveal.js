@@ -39,295 +39,219 @@
 
 				<section>
 					<h1>Ember Data</h1>
+					<h2>JJ Abrams</h2>
 					<p>
 						<small>By <a href="http://hakim.se">Igor Terzic</a> / <a href="http://twitter.com/hakimel">@terzicigor</a></small></br>
 						<small>From <a href="http://hakim.se">Addepar</a></small>
 					</p>
 				</section>
 				<section>
-					<h2>Why?</h2>
-					<h2>How?</h2>
+					<h1>Friends don't let friends use alpha software</h1>
 				</section>
 				<section>
-					<h2>Ember.js is cool and magical</h2>
-					<h2>(Other frameworks are cool as well)</h2>
+					<h2>Three Ember-Data users</h2>
 				</section>
 				<section>
+					<h2>Yehuda:</h2>
+					<h3>Rails</h3>
+					<h3>Consistent APIs</h3>
+					<h3>Ember-rails</h3>
+				</section>
+				<section>
+					<h2>Bob:</h2>
+					<h3>Custom API</h3>
+					<h3>Complex requirements</h3>
+				</section>
+				<section>
+					<h2>Igor:</h2>
+					<h3>Used to be Bob</h3>
+					<h3>Beat Ember-Data into submission</h3>
+				</section>
+				<section>
+					<h2>Escape velocity</h2>
 					<a class="image" href="" target="_blank">
-						<img src="http://emberjs.com/images/blog/most-web-architectures.png" alt="Meny">
+						<img src="http://www.fsc.ufsc.br/pesqpeduzzi/escape-velocity1.jpg" alt="Meny">
           </a>
 				</section>
 				<section>
-					<h2>Not an easy problem</h2>
+					<h1>Reboot</h1>
 				</section>
 				<section>
-					<h2>Not an ORM</h2>
-					<h2>ORM's are easy :)</h2>
-				</section>
-				<section>
-					<h2>Disclaimer</h2>
-					<h2>Alpha software</h2>
-				</section>
-				<section>
-					<h2>Other ember frameworks:</h2>
-					<h2>Ember-model</h2>
-					<h2>Ember-rest</h2>
-				</section>
-				<section>
-					<h2>High level view</h2>
 					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/VG4vL8n.png" alt="Meny">
-					</a>
-        </section>
+						<img src="http://images3.wikia.nocookie.net/__cb20130704233720/toonami/images/a/a4/Reboot_dvd.jpg" alt="Meny">
+          </a>
+				</section>
 				<section>
-          <h3>Our Store</h3>
-					<pre><code data-trim contenteditable>
-App.Store = DS.Store.extend({
-  adapter: 'DS.RESTAdapter'   
-})
-					</code></pre>
-        
-        </section>
+					<a class="image" href="" target="_blank">
+						<img src="http://www.erikvidal.com/.a/6a00d834d0671369e201538f7fdb09970b-500wi" alt="Meny">
+          </a>
+				</section>
 				<section>
-          <h3>Our Model</h3>
+					<a class="image" href="" target="_blank">
+						<img src="http://www.girlscouts.org/forgirls/images/travel/events/ATS%20Hollywood%20sign.JPG" alt="Meny">
+          </a>
+				</section>
+				<section>
+          <h3>JJ Abrams</h3>
 					<pre><code data-trim contenteditable>
-App.Post = DS.Model.extend {
-  name: DS.attr('string'),
-  date: DS.attr('string'),
-  comments: DS.hasMany('App.Comment')
-}
+https://github.com/emberjs/data/tree/jj-abrams
 					</code></pre>
         </section>
 				<section>
-          <h3>Getting data</h3>
-					<pre><code data-trim contenteditable>
-var post = App.Post.find(1);
-					</code></pre>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/x4JXjDA.jpg" alt="Meny">
+          </a>
+				</section>
+				<section>
+					<a class="image" href="" target="_blank">
+						<img src="http://geekmundo.net/wp-content/uploads/2011/11/Star_Trek_2009_2013.jpg" alt="Meny">
+          </a>
+				</section>
+				<section>
+					<h2>Good parts</h1>
+					<h2>Bad parts</h1>
+					<h1>Cool new stuff</h1>
+				</section>
+				<section>
+					<a class="image" href="" target="_blank">
+						<img src="http://f.cl.ly/items/2Z323F0J3t413O122235/edgp.jpg" alt="Meny">
+          </a>
         </section>
 				<section>
-          <h3>Getting data</h3>
+					<h2>Model API</h2>
 					<pre><code data-trim contenteditable>
-var allPosts = App.Post.find();
-					</code></pre>
-        </section>
-				<section>
-          <h3>Identity map</h3>
-					<pre><code data-trim contenteditable>
-var post = App.Post.find(1);
-.... 
-....
-var myPost = App.Post.find(1);
-					</code></pre>
-        </section>
-				<section>
-          <h3>Live arrays</h3>
-					<pre><code data-trim contenteditable>
-var allPosts = App.Post.all();
-allPosts.toArray().length == 0
-
-App.Post.createRecord({'name': 'Igor'});
-allPosts.toArray().length == 1
-					</code></pre>
-        </section>
-				<section>
-          <h3>Live arrays</h3>
-					<pre><code data-trim contenteditable>
-var allPosts = App.Post.filter(function(post){
-  return post.get('name') == 'Ember.js'
+App.Person = DS.Model.extend({
+  firstName: DS.attr('string'),
+  lastName: DS.attr('string'),
+  birthday: DS.attr('date'),
 });
-allPosts.toArray().length == 0
-
-App.Post.createRecord({'name': 'Backbone.js'});
-allPosts.toArray().length == 0 
-
-App.Post.createRecord({'name': 'Ember.js'});
-allPosts.toArray().length == 1 
 					</code></pre>
-					</code></pre>
-        </section>
+				</section>
 				<section>
-          <h3>Sending data back</h3>
+					<h2>Structure and modularity</h2>
+				</section>
+				<section>
+					<h1>Parts that were bad</h1>
+				</section>
+				<section>
+					<h2>Transactions</h2>
+				</section>
+				<section>
+					<h2>Dirtyness</h2>
+				</section>
+				<section>
+					<h2>Overzealous state manager</h2>
 					<pre><code data-trim contenteditable>
-var post = App.Post.find(1);
-post.set('name', 'Remote talks are weird');
-post.get('transaction').commit();
+   DS.StateManager:ember1070 
+  could not respond to event didChangeData in state 
+    rootState.loaded.updated.uncommitted
 					</code></pre>
-        </section>
+				</section>
 				<section>
-          <h3>Sending data back</h3>
+					<h1>New things</h1>
+				</section>
+				<section>
+					<h2>Promises</h2>
 					<pre><code data-trim contenteditable>
-DS.defaultStore.commit()
+App.IndexRoute = Ember.Route.extend({
+  model: function() {
+    var store = this.get('store');
+    return store.findAll('album'); 
+  }
+});
 					</code></pre>
-        </section>
+				</section>
 				<section>
-          <h3>State Manager</h3>
 					<pre><code data-trim contenteditable>
-          post.get('stateManager.currentPath')
+store.find('person', 1).then(function(person) {
+  if (person.get('isAdmin')) {
+    doSomething();
+  } else {
+    doOtherThing();
+  }
+});
 					</code></pre>
-        </section>
+				</section>
 				<section>
-          <h3>State Manager</h3>
+					<h2>Flexibility</h2>
+				</section>
+				<section>
+					<h2>Flexibility</h2>
 					<pre><code data-trim contenteditable>
-          'inflight','uncommited','saved'
+var socket = new WebSocket("ws://example.com/albums");
+socket.onmessage = function(msg) {
+  var album = JSON.parse(msg.data);
+  store.push('album', album);
+});
 					</code></pre>
-        </section>
+				</section>
 				<section>
-          <h3>State helpers</h3>
+					<h2>Error state</h2>
 					<pre><code data-trim contenteditable>
-            post.get('isDirty')
+person.save().then(null, function() {
+  person.save();
+});
 					</code></pre>
-        </section>
+				</section>
 				<section>
-          <h3>Testing</h3>
+					<h2>Simplified hooks</h2>
 					<pre><code data-trim contenteditable>
-DS.defaultStore.reset()
+App.Adapter = DS.RESTAdapter.extend({
+  extract: function(store, type, id, payload) {
+    if (payload._summary) {
+      payload.summaryDatas = payload._summary.mapProperty('_details');
+      delete payload._summary;
+    }
+    return this._super(store, type, id, payload);
+  }
+});
 					</code></pre>
+				</section>
+				<section>
+					<h2>Simplified hooks</h2>
+					<pre><code data-trim contenteditable>
+App.PostAdapter = DS.RESTAdapter.extend({
+  extract: function(store, type, id, payload) {
+    if (payload._summary) {
+      payload.summaryDatas = payload._summary.mapProperty('_details');
+      delete payload._summary;
+    }
+    return this._super(store, type, id, payload);
+  }
+});
+					</code></pre>
+				</section>
+				<section>
+					<h2>Even more:</h2>
+					<h2>Merge hook</h2>
+					<h2>Modules</h2>
+				</section>
+				<section>
+					<h2>Roadmap</h2>
+				</section>
+				<section>
+				<h2>One more thing...</h2>
         </section>
 				<section>
-          <h3>Modular Structure</h3>
+          <h3>From the same people who brought you Ember-table</h3>
         </section>
 				<section>
 					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/VG4vL8n.png" alt="Meny">
-					</a>
+						<img src="http://i.imgur.com/Ryq0XQG.png" alt="Meny">
+          </a>
         </section>
 				<section>
-						<img src="http://i.imgur.com/YY93uoZ.png" alt="Meny">
+          <h3>Coming soon to a computer near you</h3>
         </section>
 				<section>
-          <h3>Adapters and Serializers</h3>
-        </section>
-				<section>
-          <h3>Adapter</h3>
-					<pre><code data-trim contenteditable>
-/posts/1
-/myEnterpriseSystem/data/posts/1
-					</code></pre>
-        </section>
-				<section>
-          <h3>Adapter</h3>
-					<pre><code data-trim contenteditable>
-DELETE /posts/1
-/myEnterpriseSystem/data/posts/1/delete
-					</code></pre>
-        </section>
-				<section>
-          <h3>Serializer</h3>
-					<pre><code data-trim contenteditable>
-  post: {
-    id:1,
-    name: 'Ember is awesome',
-    comments: [1,7]
-  } 
-					</code></pre>
-        </section>
-				<section>
-          <h3>Serializer</h3>
-					<pre><code data-trim contenteditable>
- <POST>
-  <ID>1</ID>
-  <NAME>'Ember is awesome'</NAME>  
- </POST>
-					</code></pre>
-        </section>
-				<section>
-          <h2>Adapters:</h2>
-          <h3>RESTAdapter</h3>
-          <h3>Django-adapter</h3>
-          <h3>ember-rails</h3>
-        </section>
-				<section>
-          <h2>Adapters:</h2>
-          <h3>local-storage</h3>
-          <h3>indexDB</h3>
-        </section>
-				<section>
-          <h2>Serializers:</h2>
-          <h3>JSONSerializer</h3>
-        </section>
-				<section>
-          <h3>How to customize?</h3>
-        </section>
-				<section>
-          <h3>Declarative APIs</h3>
-      
-					<pre><code data-trim contenteditable>
-Addepar.Adapter.configure 'plurals',
-  person: 'people'
-  entity: 'entities'
-  tos: 'tos'
-					</code></pre>
-				</section>
-
-
-
-
-				<section>
-          <h3>Getting data</h3>
-					<pre><code data-trim contenteditable>
-var post = App.Post.find(1)
-					</code></pre>
-        </section>
-				<section>
-					<h2>Load data</h2>
-        </section>
-				<section>
-          <h3>Our Data</h3>
-					<pre><code data-trim contenteditable>
-{
-  post: {
-    id:1,
-    name: 'Ember is awesome',
-    comments: [1,7]
-  },
-  meta: {
-    retrievedAt: 1368577859
-  },
-  comments: [{
-    id: 1,
-    content: 'No it's not'
-  }]
-}
-					</code></pre>
-        </section>
-				<section>
-						<img src="http://i.imgur.com/8l6qtrT.png" alt="Meny">
-				</section>
-				<section>
-          <h3>Extraction:</h3>
-						<img src="http://i.imgur.com/KEpZVjm.png" alt="Meny">
-				</section>
-				<section>
-          <h3>Our Data</h3>
-					<pre><code data-trim contenteditable>
-{
-  post: {
-    id:1,
-    name: 'Ember is awesome',
-    comments: [1,7]
-  },
-}
-					</code></pre>
-        </section>
-				<section>
-						<img src="http://i.imgur.com/fKaWSPF.png" alt="Meny">
-				</section>
-				<section>
-					<pre><code data-trim contenteditable>
-{
-  name: 'Ember is awesome',
-  comments: [1,7]
-}
-					</code></pre>
-        </section>
-				<section>
-						<img src="http://i.imgur.com/fKaWSPF.png" alt="Meny">
-        </section>
-				<section>
-						<img src="http://i.imgur.com/coL9O8G.png" alt="Meny">
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/yFG9Kcn.jpg" alt="Meny">
+          </a>
         </section>
 				<section>
 				<h2>Thanks!</h2>
+             <a href="http://twitter.com/hakimel">@terzicigor</a></small></br>
+             <a href="http://twitter.com/hakimel">@addepar</a></small></br>
         </section>
 
 			</div>
