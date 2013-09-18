@@ -46,213 +46,65 @@
 					</p>
 				</section>
 				<section>
-					<h1>Friends don't let friends use alpha software</h1>
+					<h1>Ember.js</h1>
 				</section>
 				<section>
-					<h2>Three Ember-Data users</h2>
+					<h1>It's a javascript framework</h1>
 				</section>
 				<section>
-					<h2>Yehuda:</h2>
-					<h3>Rails</h3>
-					<h3>Consistent APIs</h3>
-					<h3>Ember-rails</h3>
+					<h2>So many frameworks....</h2>
 				</section>
 				<section>
-					<h2>Bob:</h2>
-					<h3>Custom API</h3>
-					<h3>Complex requirements</h3>
+					<h2>How to pick one</h2>
 				</section>
 				<section>
-					<h2>Igor:</h2>
-					<h3>Used to be Bob</h3>
-					<h3>Beat Ember-Data into submission</h3>
+					<h2>Do I need one?</h2>
 				</section>
 				<section>
-					<h2>Escape velocity</h2>
-					<a class="image" href="" target="_blank">
-						<img src="http://www.fsc.ufsc.br/pesqpeduzzi/escape-velocity1.jpg" alt="Meny">
-          </a>
+					<h2>Feature lists</h2>
 				</section>
 				<section>
-					<h1>Reboot</h1>
+					<h2>Top of HN</h2>
 				</section>
 				<section>
-					<a class="image" href="" target="_blank">
-						<img src="http://images3.wikia.nocookie.net/__cb20130704233720/toonami/images/a/a4/Reboot_dvd.jpg" alt="Meny">
-          </a>
+					<h2>Boss says so</h2>
 				</section>
 				<section>
-					<a class="image" href="" target="_blank">
-						<img src="http://www.erikvidal.com/.a/6a00d834d0671369e201538f7fdb09970b-500wi" alt="Meny">
-          </a>
+					<h2>What it tries to do</h2>
 				</section>
 				<section>
-					<a class="image" href="" target="_blank">
-						<img src="http://www.girlscouts.org/forgirls/images/travel/events/ATS%20Hollywood%20sign.JPG" alt="Meny">
-          </a>
+					<h2>How well does it do it</h2>
 				</section>
 				<section>
-          <h3>JJ Abrams</h3>
-					<pre><code data-trim contenteditable>
-https://github.com/emberjs/data/tree/jj-abrams
-					</code></pre>
-        </section>
-				<section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/x4JXjDA.jpg" alt="Meny">
-          </a>
+					<h2>Framework for ambitious web apps</h2>
 				</section>
 				<section>
-					<a class="image" href="" target="_blank">
-						<img src="http://geekmundo.net/wp-content/uploads/2011/11/Star_Trek_2009_2013.jpg" alt="Meny">
-          </a>
+					<h2>Thank you</h2>
 				</section>
 				<section>
-					<h2>Good parts</h1>
-					<h2>Bad parts</h1>
-					<h1>Cool new stuff</h1>
+					<h2>Framework for ambitious web apps</h2>
 				</section>
 				<section>
-					<a class="image" href="" target="_blank">
-						<img src="http://f.cl.ly/items/2Z323F0J3t413O122235/edgp.jpg" alt="Meny">
-          </a>
-        </section>
-				<section>
-					<h2>Model API</h2>
-					<pre><code data-trim contenteditable>
-App.Person = DS.Model.extend({
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
-  birthday: DS.attr('date'),
-});
-					</code></pre>
+					<h2>Web won a long time ago</h2>
 				</section>
 				<section>
-					<h2>Structure and modularity</h2>
+					<h2>Openes, sharing</h2>
 				</section>
 				<section>
-					<h1>Parts that were bad</h1>
+					<h2>URL</h2>
 				</section>
 				<section>
-					<h2>Transactions</h2>
+					<h2>URL driven development</h2>
 				</section>
 				<section>
-					<h2>Dirtyness</h2>
+					<h2>Ember is MVC</h2>
 				</section>
 				<section>
-					<h2>Overzealous state manager</h2>
-					<pre><code data-trim contenteditable>
-   DS.StateManager:ember1070 
-  could not respond to event didChangeData in state 
-    rootState.loaded.updated.uncommitted
-					</code></pre>
+					<h2>Everything comes from the URL<h2>
 				</section>
 				<section>
-					<h1>New things</h1>
+					<h2>Code sample<h2>
 				</section>
-				<section>
-					<h2>Promises</h2>
-					<pre><code data-trim contenteditable>
-App.IndexRoute = Ember.Route.extend({
-  model: function() {
-    var store = this.get('store');
-    return store.findAll('album'); 
-  }
-});
-					</code></pre>
-				</section>
-				<section>
-					<pre><code data-trim contenteditable>
-store.find('person', 1).then(function(person) {
-  if (person.get('isAdmin')) {
-    doSomething();
-  } else {
-    doOtherThing();
-  }
-});
-					</code></pre>
-				</section>
-				<section>
-					<h2>Flexibility</h2>
-				</section>
-				<section>
-					<h2>Flexibility</h2>
-					<pre><code data-trim contenteditable>
-var socket = new WebSocket("ws://example.com/albums");
-socket.onmessage = function(msg) {
-  var album = JSON.parse(msg.data);
-  store.push('album', album);
-});
-					</code></pre>
-				</section>
-				<section>
-					<h2>Error state</h2>
-					<pre><code data-trim contenteditable>
-person.save().then(null, function() {
-  person.save();
-});
-					</code></pre>
-				</section>
-				<section>
-					<h2>Simplified hooks</h2>
-					<pre><code data-trim contenteditable>
-App.Adapter = DS.RESTAdapter.extend({
-  extract: function(store, type, id, payload) {
-    if (payload._summary) {
-      payload.summaryDatas = payload._summary.mapProperty('_details');
-      delete payload._summary;
-    }
-    return this._super(store, type, id, payload);
-  }
-});
-					</code></pre>
-				</section>
-				<section>
-					<h2>Simplified hooks</h2>
-					<pre><code data-trim contenteditable>
-App.PostAdapter = DS.RESTAdapter.extend({
-  extract: function(store, type, id, payload) {
-    if (payload._summary) {
-      payload.summaryDatas = payload._summary.mapProperty('_details');
-      delete payload._summary;
-    }
-    return this._super(store, type, id, payload);
-  }
-});
-					</code></pre>
-				</section>
-				<section>
-					<h2>Even more:</h2>
-					<h2>Merge hook</h2>
-					<h2>Modules</h2>
-				</section>
-				<section>
-					<h2>Roadmap</h2>
-				</section>
-				<section>
-				<h2>One more thing...</h2>
-        </section>
-				<section>
-          <h3>From the same people who brought you Ember-table</h3>
-        </section>
-				<section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/Ryq0XQG.png" alt="Meny">
-          </a>
-        </section>
-				<section>
-          <h3>Coming soon to a computer near you</h3>
-        </section>
-				<section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/yFG9Kcn.jpg" alt="Meny">
-          </a>
-        </section>
-				<section>
-				<h2>Thanks!</h2>
-             <a href="http://twitter.com/hakimel">@terzicigor</a></small></br>
-             <a href="http://twitter.com/hakimel">@addepar</a></small></br>
-        </section>
 
 			</div>
 
