@@ -99,6 +99,9 @@
 					<a class="image" href="" target="_blank">
 						<img src="http://www.blogcdn.com/www.switched.com/media/2009/06/800px-paolo_veronese,_the_wedding_at_cana.jpg" alt="Meny">
           </a>
+          <aside class="notes">
+            Fashion styles for 16th century renessainse to postmodernism
+          </aside>
         </section>
         <section>
 					<a class="image" href="" target="_blank">
@@ -134,6 +137,14 @@
           </a>
         </section>
         <section>
+					<a class="image" href="" target="_blank">
+						<img src="https://lh6.googleusercontent.com/--vrvTQZUf0I/Txx3hI1Fr9I/AAAAAAAABiI/oO5OyHovryI/s400/Brutalism%252525201.JPG" alt="Meny">
+          </a>
+        </section>
+        <section>
+					<h2>Zeitgeist</h2>
+        </section>
+        <section>
 					<h2>Thin and thick clients</h2>
         </section>
         <section>
@@ -157,7 +168,7 @@
           </a>
         </section>
         <section>
-					<h2>REST simple Ajax web apps</h2>
+					<h2>simple Ajax web apps with REST APIs</h2>
         </section>
         <section>
 					<h2>Thick web clients</h2>
@@ -180,7 +191,7 @@
           </a>
         </section>
         <section>
-					<h2>Zeitgeist=javascript/HTML</h2>
+					<h2>Zeitgeist==javascript/HTML</h2>
         </section>
         <section>
 					<h2>URLS</h2>
@@ -188,16 +199,19 @@
           <h3>Open Culture</h3>
         </section>
         <section>
-					<h2>Ember.js is a framework for web apps</h2>
+					<h2>Ember.js is a framework for ambitious web apps</h2>
         </section>
         <section>
-					<h2>It is important that the web wins, even over native apps</h2>
+					<h2>It is important that the web wins</h2>
         </section>
         <section>
 					<h2>Ambitious web apps</h2>
         </section>
         <section>
 					<h2>Ember.js keeps the web nonbroken</h2>
+          <aside class="notes">
+            Demo
+          </aside>
         </section>
         <section>
 					<h2>Data level</h2>
@@ -224,9 +238,11 @@
         </section>
         <section>
 					<h2>Data goes in and out</h2>
-        </section>
-        <section>
-					<h2>Ambitious Applications</h2>
+          <aside class="notes">
+            REST CRUD
+            $.POST $.GET
+            USED TO BE ENOUGH
+          </aside>
         </section>
         <section>
 					<h2>Switch tabs</h2>
@@ -244,7 +260,7 @@
             .
             .
             .
-            var samePerson = store.find('person, 1)
+var samePerson = store.find('person, 1)
 					</code></pre>
 					<h2></h2>
         </section>
@@ -252,12 +268,12 @@
 					<h2>Identity map</h2>
 					<pre><code data-trim contenteditable>
             var person = store.find('person', 1)
-            .
-            var samePerson = store.find('person, 1)
-            .
-            .
-            person.set('name', 'Igor
-            samePerson.get('name') -> 'Igor
+.
+var samePerson = store.find('person', 1)
+.
+.
+person.set('name', 'Igor')
+samePerson.get('name') -> 'Igor'
 					</code></pre>
         </section>
         <section>
@@ -267,6 +283,9 @@
         </section>
         <section>
 					<h2>So far so good, but why Ember-Data?</h2>
+          <aside class="notes">
+              WELL LOTS OF NICETIES
+          </aside>
         </section>
         <section>
 					<h2>Local schema</h2>
@@ -296,8 +315,24 @@ App.Person = DS.Model.extend({
 ];
 					</code></pre>
         </section>
+        <section>
+					<h2>Promises</h2>
+					<pre><code data-trim contenteditable>
+var parent = store.createRecord('parent');
+var child = store.createRecord('child');
+child.set('parent', parent)
+parent.save().then(
+   function(){
+    child.save()
+})
+					</code></pre>
+        </section>
 				<section>
-          <h2>Paradigm for solving problems></h2>
+          <h2>Features are nice</h2>
+        </section>
+				<section>
+          <h2>Paradigm for solving problems</h2>
+          <h2>Zeitgeist</h2>
         </section>
 				<section>
 				<h2>Thanks!</h2>
