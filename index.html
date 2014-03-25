@@ -52,7 +52,14 @@
         </section>
         <section>
 					<h2>Where it came from</h2>
-					<h2>The way forward</h2>
+        </section>
+        <section>
+					<h2>Current state</h2>
+        </section>
+        <section>
+					<h2>Way forwards towards ED 1.0</h2>
+        </section>
+        <section>
 					<h2>Ember Data as a Data Persistence Framework</h2>
         </section>
         <section>
@@ -80,13 +87,21 @@
             Graphics engine
           </aside>
         </section>
+      
         <section>
 					<a class="image" href="" target="_blank">
-						<img src="http://cdn.macrumors.com/article-new/2014/01/upgrades.jpg" alt="Meny">
+						<img src="https://pbs.twimg.com/profile_images/3342514715/3fde89df63ea4dacf9de71369019df22.png" alt="Meny">
           </a>
         </section>
         <section>
-					<h2>Car==Car</h2>
+					<a class="image" href="" target="_blank">
+						<img src="http://cdn.macrumors.com/article-new/2014/01/upgrades.jpg" style="width:800px" alt="Meny">
+          </a>
+        </section>
+        <section>
+					<a class="image" href="" target="_blank">
+						<img src="http://upload.wikimedia.org/wikipedia/commons/8/88/Bright_red_tomato_and_cross_section02.jpg" alt="Meny">
+          </a>
         </section>
         <section>
 					<a class="image" href="" target="_blank">
@@ -95,16 +110,14 @@
         </section>
         <section>
 					<a class="image" href="" target="_blank">
-						<img src="http://i3.kym-cdn.com/photos/images/newsfeed/000/288/648/776.gif" alt="Meny">
+						<img src="http://i3.kym-cdn.com/photos/images/newsfeed/000/288/648/776.gif" style="width:400px" alt="Meny">
           </a>
         </section>
         <section>
-					<h2>Ember Data as a Data Persistence Framework</h2>
+					<h2>Data Persistence Framework</h2>
         </section>
         <section>
 					<h2>Benefits</h2>
-					<h2>Work for free</h2>
-					<h2>Way of thinking about problems</h2>
         </section>
         <section>
 					<a class="image" href="" target="_blank">
@@ -123,17 +136,23 @@
 					<h2>What problems does it solve?</h2>
         </section>
         <section>
-					<h2>This sucks</h2>
-					<h2>Use Y it doesn't suck anymore</h2>
+					<h2>Doing X sucks!</h2>
         </section>
         <section>
-					<h2>Handlebars-Too much logic in the view</h2>
-					<h2>Rails-something something</h2>
-					<h2>MongoDB-current Db a is too reliable</h2>
-          <aside class="notes">
-            Features do not map to problems solved 100%
-          </aside>
+					<h2>Use Y so X doesn't suck anymore</h2>
         </section>
+        <section>
+					<h2>Too much logic in the view-Handlebars</h2>
+        </section>
+        <section>
+					<h2>Too much repetition-Rails</h2>
+        </section>
+        <section>
+					<h2>Current DB engines are too reliable-MongoDB</h2>
+          <aside class="notes">
+            Not just a list of features
+            It informs your world view
+          </aside>
         </section>
         <section>
 					<h2>Ember-Data</h2>
@@ -146,13 +165,12 @@
           </a>
         </section>
         <section>
-					<h2>Code/data organisation in the front end</h2>
-					<h2>Not our problem get a PHD or server guys to solve it</h2>
-        </section>
-        <section>
 					<a class="image" href="" target="_blank">
 						<img src="https://scontent-b-sjc.xx.fbcdn.net/hphotos-prn2/v/t34.0-12/10152920_10203247969588111_1500622065_n.jpg?oh=fcc80c47d32a2b3784be972910e0d532&oe=53337911" alt="Meny">
           </a>
+        </section>
+        <section>
+					<h2>Code/data organisation in the front end</h2>
         </section>
         <section>
 					<h2>Data transformation</h2>
@@ -171,7 +189,13 @@
 					<h2>Common/Unique</h2>
         </section>
         <section>
-					<h2>Map nicely to Ember-Data's structure</h2>
+					<h2>Easier problems should be locked down less</h2>
+        </section>
+        <section>
+          Adapter->Serializer-Store image
+          <aside class="notes">
+					Map nicely to Ember-Data's structure
+          </aside>
         </section>
         <section>
 					<h2>Data transformation</h2>
@@ -219,13 +243,53 @@ user.save() -> POST /user/1
 					<h2>Custom</h2>
         </section>
         <section>
-					<h2>Picture of the old adapter</h2>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/coL9O8G.png" alt="Meny">
+          </a>
         </section>
         <section>
-					<h2>Normalize, etc.</h2>
+          <blockquote>
+            "The hooks now are insanely better"
+            - Robert Jackson
+          </blockquote>
+          <aside class="notes">
+          Partially because we know
+          partially because we care less
+          </aside>
         </section>
         <section>
-					<h2>Nice defaults, and get out of the way</h2>
+					<pre><code data-trim contenteditable>
+App.UserSerializer = DS.RestSerializer.extend({
+  normalize: function(hash){
+    //DO CUSTOM CRAZY STUFF HERE
+ } 
+})
+					</code></pre>
+        </section>
+        <section>
+					<pre><code data-trim contenteditable>
+App.UserSerializer = DS.RestSerializer.extend({
+  extractSingle: function(store, primaryType, payload){
+    //DO EVEN CRAZIER STUFF HERE
+ },
+
+  extractArray: function(store, primaryType, payload){
+    //DO EVEN CRAZIER STUFF HERE
+ } 
+})
+					</code></pre>
+        </section>
+        <section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/8ttrpSd.jpg" alt="Meny">
+          </a>
+          <aside class="notes">
+					Nice defaults, and get out of the way
+          EASY TO OVERWITE
+          </aside>
+        </section>
+        <section>
+					<h2>Future: tighten up</h2>
         </section>
         <section>
 					<h2>Data transformation-easy</h2>
@@ -233,24 +297,40 @@ user.save() -> POST /user/1
 					<h2>Caching-medium</h2>
         </section>
         <section>
-					<h2>Asyncronicity</h2>
+					<h2>Asynchronicity</h2>
         </section>
         <section>
 					<h2>Promises</h2>
         </section>
         <section>
-					<h2>Substack</h2>
+					<a class="image" href="" target="_blank">
+						<img src="https://pbs.twimg.com/profile_images/3342514715/3fde89df63ea4dacf9de71369019df22.png" alt="Meny">
+          </a>
         </section>
         <section>
-					<h2>Tom Dale approved slide</h2>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/GSH4b6p.png" alt="Meny">
+          </a>
         </section>
         <section>
-					<h2>Before: Lazy materialization--example of how thinking about problems the right way simplifies them</h2>
+					<h2>Asynchronicity</h2>
+          <aside class="notes">
+					Before: Lazy materialization--example of how thinking about problems the right way simplifies them
+          </aside>
+        </section>
+        <section>
+					<h3>Before:</h3>
+					<pre><code data-trim contenteditable>
+user.find()
+user.onLoad( function(){
+  //DO THINGS
+});
+					</code></pre>
         </section>
         <section>
 					<h3>Current:</h3>
 					<pre><code data-trim contenteditable>
-user.find().then( function(data){
+store.find('user', 1).then( function(data){
   data.get('name')
 });
 					</code></pre>
@@ -299,7 +379,7 @@ App.User = DS.Model.extend({
           </aside>
         </section>
         <section>
-					<h2>If such a bad idea why do it in the first place??</h2>
+					<h2>Changes to the API should not impact App code</h2>
         </section>
         <section>
 					<h3>Future:</h3>
@@ -310,7 +390,7 @@ App.User = DS.Model.extend({
 })
 
 user.get('friends').then( function(friends){
-
+  //DO THINGS
 });
 					</code></pre>
         </section>
@@ -325,24 +405,36 @@ user.get('friends').then( function(friends){
 					</code></pre>
         </section>
         <section>
-					<h3>Current:</h3>
+					<h2>Lazy arrays</h2>
+        </section>
+        <section>
+					<h3>Future:</h3>
 					<pre><code data-trim contenteditable>
-friends: 
+user.get('friends').then( function(friends){
+  friends.objectAt(0).then( function(firstFriend) {
+    firstFriend.get('name');
+  });
+});
 					</code></pre>
         </section>
         <section>
-					<h2>Lazy arrays</h2>
-					<h2>Future proof</h2>
+      <h2>PromiseProxyMixin</h2>
         </section>
         <section>
-					<h2>Kinda harder, common</h2>
-        </section>
-        <section>
-					<h2>Lazy arrays</h2>
+					<h3>Current:</h3>
+					<pre><code data-trim contenteditable>
+user: function(){
+  store.find('user', 1)
+}.property()
+
+friends: function(){
+  this.get('user.friends')
+}.property('user.friends')
+					</code></pre>
         </section>
         <section>
 					<h2>Data transformation</h2>
-					<h2>Asyncronicity</h2>
+					<h2>Asynchronicity</h2>
 					<h2>Caching</h2>
         </section>
         <section>
@@ -373,27 +465,34 @@ samePerson.get('name') -> 'Igor'
 					</code></pre>
         </section>
         <section>
+					<h2>Data transformation</h2>
+					<h2>Asyncronicity</h2>
+					<h2>Caching</h2>
+          <aside class="notes">
+          What kind of difficulty scale goes from easy to medium
+          </aside>
+        </section>
+        <section>
 					<h2>Huh?</h2>
         </section>
         <section>
 					<h2>Even standardized jquery.ajax is great for productivity</h2>
         </section>
         <section>
-					<h2>Data transformation</h2>
-					<h2>Asyncronicity</h2>
-					<h2>Caching/Locality</h2>
+					<h2>Data transformation-easy</h2>
+					<h2>Asynchronicity-medium</h2>
+					<h2>Caching-medium</h2>
+          <aside class="notes">
+          What kind of difficulty scale goes from easy to medium
+          </aside>
         </section>
         <section>
-					<h2>Cache diagram</h2>
+					<pre><code data-trim contenteditable>
+store.find('user', 1)
+					</code></pre>
         </section>
         <section>
-					<h2>Identity map</h2>
-        </section>
-        <section>
-					<h2>Actually there is a problem</h2>
-        </section>
-        <section>
-					<h2>My mother wants to give me stuff</h2>
+					<h2>My mother</h2>
         </section>
         <section>
 					<h2>Locality</h2>
@@ -409,7 +508,20 @@ samePerson.get('name') -> 'Igor'
 					<h2>It's a very hard problem</h2>
         </section>
         <section>
-					<h2>Examples</h2>
+					<pre><code data-trim contenteditable>
+store.find('user', 1)
+{ user: { id:1,
+    name: 'Igor'
+  },
+ 
+ emails:[] 
+}
+					</code></pre>
+        </section>
+        <section>
+					<pre><code data-trim contenteditable>
+
+					</code></pre>
         </section>
     
         <section>
