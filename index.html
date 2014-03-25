@@ -68,6 +68,7 @@
         <section>
 					<h2>Igor Terzic</h2>
           <h4>@terzicigor</h4> From <h4>@Addepar</h4>
+          <h4>addepar.github.io</h4>
           <aside class="notes">
               Foreign accent, name
               Google translate, deal with it
@@ -75,7 +76,7 @@
         </section>
         <section>
 					<a class="image" href="" target="_blank">
-						<img src="http://i.stack.imgur.com/RQnBu.png" alt="Meny">
+						<img src="http://i.imgur.com/CQbxPcB.png" alt="Meny">
           </a>
         </section>
         <section>
@@ -90,12 +91,17 @@
       
         <section>
 					<a class="image" href="" target="_blank">
-						<img src="https://pbs.twimg.com/profile_images/3342514715/3fde89df63ea4dacf9de71369019df22.png" alt="Meny">
+						<img src="http://www.xblafans.com/wp-content/uploads//2011/08/Grim-Fandango3.jpg" alt="Meny">
           </a>
         </section>
         <section>
 					<a class="image" href="" target="_blank">
 						<img src="http://cdn.macrumors.com/article-new/2014/01/upgrades.jpg" style="width:800px" alt="Meny">
+          </a>
+        </section>
+        <section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/qCH182e.jpg" style="width:800px" alt="Meny">
           </a>
         </section>
         <section>
@@ -131,6 +137,11 @@
             If Ember disappeared tomorrow
             Angular Attack
           </aside>
+        </section>
+        <section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/NMTfFMA.jpg" alt="Meny">
+          </a>
         </section>
         <section>
 					<h2>What problems does it solve?</h2>
@@ -189,10 +200,15 @@
 					<h2>Common/Unique</h2>
         </section>
         <section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/Z9NtukO.png" alt="Meny">
+          </a>
+        </section>
+        <section>
 					<h2>Easier problems should be locked down less</h2>
         </section>
         <section>
-          Adapter->Serializer-Store image
+          Adapter/Serializer-Store/Models
           <aside class="notes">
 					Map nicely to Ember-Data's structure
           </aside>
@@ -286,6 +302,7 @@ App.UserSerializer = DS.RestSerializer.extend({
           <aside class="notes">
 					Nice defaults, and get out of the way
           EASY TO OVERWITE
+          Gordon Ramsey
           </aside>
         </section>
         <section>
@@ -295,6 +312,11 @@ App.UserSerializer = DS.RestSerializer.extend({
 					<h2>Data transformation-easy</h2>
 					<h2>Asynchronicity-medium</h2>
 					<h2>Caching-medium</h2>
+        </section>
+        <section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/dHABM8T.png" alt="Meny">
+          </a>
         </section>
         <section>
 					<h2>Asynchronicity</h2>
@@ -438,6 +460,11 @@ friends: function(){
 					<h2>Caching</h2>
         </section>
         <section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/Q4J4ZhD.png" alt="Meny">
+          </a>
+        </section>
+        <section>
 					<h2>Caching</h2>
         </section>
         <section>
@@ -473,10 +500,15 @@ samePerson.get('name') -> 'Igor'
           </aside>
         </section>
         <section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/fJEER0O.png" alt="Meny">
+          </a>
+        </section>
+        <section>
 					<h2>Huh?</h2>
         </section>
         <section>
-					<h2>Even standardized jquery.ajax is great for productivity</h2>
+					<h2>Standardized data retrieval</h2>
         </section>
         <section>
 					<h2>Data transformation-easy</h2>
@@ -492,43 +524,84 @@ store.find('user', 1)
 					</code></pre>
         </section>
         <section>
-					<h2>My mother</h2>
+					<h2>My parents</h2>
+					<pre><code data-trim contenteditable>
+Me.get('lightbulb')
+					</code></pre>
+        </section>
+          <aside class="notes">
+            Affection
+          </aside>
+        </section>
+        <section>
+					<pre><code data-trim contenteditable>
+store.find('user', 1)
+
+user: { id:1,
+    name: 'Igor'
+},
+ 
+ emails:[ {id:1, text: 'A Few Good Slides'}] 
+}
+					</code></pre>
+        </section>
+        <section>
+					<h2>Data transformation-easy</h2>
+					<h2>Asynchronicity-medium</h2>
+					<h2>Caching-medium</h2>
+					<h2>Locality-hard</h2>
         </section>
         <section>
 					<h2>Locality</h2>
         </section>
         <section>
-					<h2>2 solutions:</h2>
-        </section>
-        <section>
-					<h2>No identity map</h2>
-					<h2>Hard solution</h2>
-        </section>
-        <section>
-					<h2>It's a very hard problem</h2>
+					<h2>Relationships</h2>
         </section>
         <section>
 					<pre><code data-trim contenteditable>
-store.find('user', 1)
-{ user: { id:1,
-    name: 'Igor'
-  },
- 
- emails:[] 
+store.find('post', 1)
+
+post: { id:1,
+    text: 'EmberConf IS Awesome',
+    comments: [54]
 }
 					</code></pre>
         </section>
         <section>
 					<pre><code data-trim contenteditable>
+post: { id:1,
+    text: 'EmberConf IS Awesome',
+    comments: [54]
+}
+post.get('comments').length === 1
 
+store.find('comment', 1)
+comment: { id:1,
+           text: 'So Much Web',
+           post: 1 }
+
+post.get('comments').length === 2 
 					</code></pre>
+        </section>
+
+        <section>
+					<h2>Single source of truth</h2>
         </section>
     
         <section>
-					<h2>Way of thinking about your data</h2>
+					<h2>Saving is easier</h2>
+					<h2>store.commit too hard</h2>
         </section>
-      
-
+    
+        <section>
+					<h2>Focus</h2>
+        </section>
+        <section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/kAHFi2x.png" alt="Meny">
+          </a>
+        </section>
+    
 				<section>
 				<h2>Thanks!</h2>
              <a href="http://twitter.com/hakimel">@terzicigor</a></small></br>
