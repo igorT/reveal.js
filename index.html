@@ -57,14 +57,12 @@
         </section>
         <section>
 					<h2>Hello!</h2>
-          <aside class="notes">
-              Foreign accent, name
-          </aside>
         </section>
         <section>
 					<h2>Igor Terzic</h2>
           <h4>@terzicigor</h4> From <h4>@Addepar</h4>
           <aside class="notes">
+              Foreign accent, name
               Google translate, deal with it
           </aside>
         </section>
@@ -78,6 +76,7 @@
 						<img src="http://i204.photobucket.com/albums/bb14/oluja74/naslovna12-sadrzaj-web.jpg" alt="Meny">
           </a>
           <aside class="notes">
+            Not many things get translated into Bosnian
             Graphics engine
           </aside>
         </section>
@@ -131,13 +130,14 @@
 					<h2>Handlebars-Too much logic in the view</h2>
 					<h2>Rails-something something</h2>
 					<h2>MongoDB-current Db a is too reliable</h2>
+          <aside class="notes">
+            Features do not map to problems solved 100%
+          </aside>
+        </section>
         </section>
         <section>
 					<h2>Ember-Data</h2>
 					<h2>Data Persistence framework</h2>
-          <aside class="notes">
-          Now that I am done trolling
-          </aside>
         </section>
         <section>
 					<h2>Data persistence is a hard problem</h2>
@@ -150,10 +150,20 @@
 					<h2>Not our problem get a PHD or server guys to solve it</h2>
         </section>
         <section>
+					<h2>Data transformation</h2>
+					<h2>Asynchronicity</h2>
+					<h2>Caching</h2>
+        </section>
+        <section>
+					<h2>Easy/Hard</h2>
+        </section>
+        <section>
 					<h2>Data transformation-easy</h2>
 					<h2>Asynchronicity-medium</h2>
 					<h2>Caching-medium</h2>
-					<h2>All three-hard</h2>
+        </section>
+        <section>
+					<h2>Common/Unique</h2>
         </section>
         <section>
 					<h2>Map nicely to Ember-Data's structure</h2>
@@ -162,23 +172,59 @@
 					<h2>Data transformation</h2>
         </section>
         <section>
-					<h2>Simple, transform data</h2>
-					<h2>Map URLs</h2>
+					<h2>Easy</h2>
+          <aside class="notes">
+            Don't say easy, say tractable, trololololol
+          </aside>
         </section>
         <section>
-					<h2>JQuery examples</h2>
+					<h2>Tractable</h2>
         </section>
         <section>
-					<h2>Normalize</h2>
+					<pre><code data-trim contenteditable>
+user: { id:1,
+  name: 'Igor',
+  slidesReady: false
+}
+					</code></pre>
         </section>
         <section>
-					<h2>Good examples</h2>
+					<pre><code data-trim contenteditable>
+<user>
+  <id>1</id>
+  <name>1</name>
+  <slides_ready>1</slides_ready>
+</user>
+					</code></pre>
+        </section>
+        <section>
+					<pre><code data-trim contenteditable>
+user.get('name') -> 'Igor'
+user.set('slidesReady', true)
+					</code></pre>
+        </section>
+        <section>
+					<pre><code data-trim contenteditable>
+user.save() -> POST /user/1
+					</code></pre>
+        </section>
+        <section>
+					<h2>Easy</h2>
+					<h2>Custom</h2>
+        </section>
+        <section>
+					<h2>Picture of the old adapter</h2>
+        </section>
+        <section>
+					<h2>Normalize, etc.</h2>
+        </section>
+        <section>
+					<h2>Nice defaults, and get out of the way</h2>
         </section>
         <section>
 					<h2>Data transformation-easy</h2>
 					<h2>Asynchronicity-medium</h2>
 					<h2>Caching-medium</h2>
-					<h2>All three-hard</h2>
         </section>
         <section>
 					<h2>Asyncronicity</h2>
