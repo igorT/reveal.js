@@ -150,6 +150,11 @@
 					<h2>Not our problem get a PHD or server guys to solve it</h2>
         </section>
         <section>
+					<a class="image" href="" target="_blank">
+						<img src="https://scontent-b-sjc.xx.fbcdn.net/hphotos-prn2/v/t34.0-12/10152920_10203247969588111_1500622065_n.jpg?oh=fcc80c47d32a2b3784be972910e0d532&oe=53337911" alt="Meny">
+          </a>
+        </section>
+        <section>
 					<h2>Data transformation</h2>
 					<h2>Asynchronicity</h2>
 					<h2>Caching</h2>
@@ -182,7 +187,8 @@
         </section>
         <section>
 					<pre><code data-trim contenteditable>
-user: { id:1,
+user: {
+  id:1,
   name: 'Igor',
   slidesReady: false
 }
@@ -233,25 +239,103 @@ user.save() -> POST /user/1
 					<h2>Promises</h2>
         </section>
         <section>
-					<h2>Lazy materialization--example of how thinking about problems the right way simplifies them</h2>
+					<h2>Substack</h2>
         </section>
         <section>
-					<h2>More promises</h2>
+					<h2>Tom Dale approved slide</h2>
         </section>
         <section>
-					<h2>Relationships are promises</h2>
+					<h2>Before: Lazy materialization--example of how thinking about problems the right way simplifies them</h2>
         </section>
         <section>
-					<h2>Fixture adapter example</h2>
+					<h3>Current:</h3>
+					<pre><code data-trim contenteditable>
+user.find().then( function(data){
+  data.get('name')
+});
+					</code></pre>
         </section>
         <section>
-					<h2>Oh no!</h2>
+					<h3>Current:</h3>
+					<pre><code data-trim contenteditable>
+comment = store.createRecord('comment')
+post = store.createRecord('post')
+post.save().then( function(data){
+  comment.set('post', data)
+  comment.save()
+});
+					</code></pre>
         </section>
         <section>
-					<h2>PromiseProxy</h2>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/n79WdxZ.jpg" alt="Meny">
+          </a>
         </section>
         <section>
-					<h2>HasMany promise</h2>
+					<h3>Current:</h3>
+					<pre><code data-trim contenteditable>
+App.User = DS.Model.extend({
+  name: DS.attr('string'),
+  friends: DS.hasMany('user', {async: true])
+})
+					</code></pre>
+        </section>
+        <section>
+					<h3>Current:</h3>
+					<pre><code data-trim contenteditable>
+App.User = DS.Model.extend({
+  name: DS.attr('string'),
+  friends: DS.hasMany('user', {async: false])
+})
+					</code></pre>
+        </section>
+        <section>
+					<h2>Bad idea :(</h2>
+        </section>
+        <section>
+					<h2>Fixture Adapter</h2>
+          <aside class="notes">
+            Go to docs
+          </aside>
+        </section>
+        <section>
+					<h2>If such a bad idea why do it in the first place??</h2>
+        </section>
+        <section>
+					<h3>Future:</h3>
+					<pre><code data-trim contenteditable>
+App.User = DS.Model.extend({
+  name: DS.attr('string'),
+  friends: DS.hasMany('user')
+})
+
+user.get('friends').then( function(friends){
+
+});
+					</code></pre>
+        </section>
+        <section>
+					<h3>Future:</h3>
+					<pre><code data-trim contenteditable>
+user.get('friends').then( function(friends){
+  friends.objectAt(0).then( function(firstFriend) {
+    firstFriend.get('name');
+  });
+});
+					</code></pre>
+        </section>
+        <section>
+					<h3>Current:</h3>
+					<pre><code data-trim contenteditable>
+friends: 
+					</code></pre>
+        </section>
+        <section>
+					<h2>Lazy arrays</h2>
+					<h2>Future proof</h2>
+        </section>
+        <section>
+					<h2>Kinda harder, common</h2>
         </section>
         <section>
 					<h2>Lazy arrays</h2>
@@ -259,15 +343,40 @@ user.save() -> POST /user/1
         <section>
 					<h2>Data transformation</h2>
 					<h2>Asyncronicity</h2>
+					<h2>Caching</h2>
         </section>
         <section>
-					<h2>Spent 15 mins, got jquery.ajax</h2>
+					<h2>Caching</h2>
+        </section>
+        <section>
+					<h2>Identity map</h2>
+					<pre><code data-trim contenteditable>
+//On App Load
+var user1 = store.find('user', 1)
+
+//In User Settings controller
+var user2 = store.find('user', 1)
+
+user1 == user2
+					</code></pre>
+        </section>
+        <section>
+					<h2>Identity map</h2>
+					<pre><code data-trim contenteditable>
+            var person = store.find('person', 1)
+.
+var samePerson = store.find('person', 1)
+.
+.
+person.set('name', 'Igor')
+samePerson.get('name') -> 'Igor'
+					</code></pre>
+        </section>
+        <section>
+					<h2>Huh?</h2>
         </section>
         <section>
 					<h2>Even standardized jquery.ajax is great for productivity</h2>
-        </section>
-        <section>
-					<h2>Lots of custom adapters etc</h2>
         </section>
         <section>
 					<h2>Data transformation</h2>
@@ -304,75 +413,10 @@ user.save() -> POST /user/1
         </section>
     
         <section>
-					<a class="image" href="" target="_blank">
-						<img src="" alt="Meny">
-          </a>
-          <aside class="notes">
-            Fashion styles for 16th century renessainse to postmodernism
-          </aside>
-        </section>
-        <section>
-					<h2>What</h2>
-					<h2>Why</h2>
-					<h2>How</h2>
-        </section>
-
-        <section>
-					<h2>JJ-Abrams update</h2>
-          <aside class="notes">
-            My last minute picture
-            My talk is gonna be better
-          </aside>
-        </section>
-
-        <section>
-					<h2>JJ-Abrams has done awesome things </h2>
-          <h2>Removed features</h2>
-          <h2>Made everything promise based, streamlined</h2>
-        </section>
-
-        <section>
-          <h2>Data persistence library</h2>
-        </section>
-      
-      
-        <section>
-          <h2>Data persistence Framework</h2>
-        </section>
-      
-
-        <section>
-					<h2>Data Persistence Framework</h2>
-        </section>
-      
-        <section>
 					<h2>Way of thinking about your data</h2>
         </section>
       
 
-        <section>
-					<h2>Identity map</h2>
-					<pre><code data-trim contenteditable>
-            var person = store.find('person', 1)
-            .
-            .
-            .
-var samePerson = store.find('person, 1)
-					</code></pre>
-					<h2></h2>
-        </section>
-        <section>
-					<h2>Identity map</h2>
-					<pre><code data-trim contenteditable>
-            var person = store.find('person', 1)
-.
-var samePerson = store.find('person', 1)
-.
-.
-person.set('name', 'Igor')
-samePerson.get('name') -> 'Igor'
-					</code></pre>
-        </section>
 				<section>
 				<h2>Thanks!</h2>
              <a href="http://twitter.com/hakimel">@terzicigor</a></small></br>
