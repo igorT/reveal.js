@@ -24,6 +24,7 @@
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
+          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -38,574 +39,141 @@
 			<div class="slides">
 
 				<section>
-					<h1>Ember-Data</h1>
+					<h2>Ember-Data Progress Update</h2>
 					<p>
 						<small>By <a href="http://terzicigor.com">Igor Terzic</a> / <a href="http://twitter.com/terzicigor">@terzicigor</a></small></br>
-						<small>From <a href="http://addepar.com">Addepar</a></small>
 					</p>
 				</section>
-        <section>
-          <blockquote>
-            "Ember Camp: A small gathering of Ember developers designed to troll Tom&Yehuda about Ember Data"
-            - Anonymous
-          </blockquote>
-        </section>
-        <section>
-					<h2>Where it came from</h2>
-        </section>
-        <section>
-					<h2>Current state</h2>
-        </section>
-        <section>
-					<h2>Way forwards towards ED 1.0</h2>
-        </section>
-        <section>
-					<h2>Ember Data as a Data Persistence Framework</h2>
-        </section>
-        <section>
-					<h2>Hello!</h2>
-        </section>
-        <section>
-					<h2>Igor Terzic</h2>
-          <h4>@terzicigor</h4> From <h4>@Addepar</h4>
-          <h4>addepar.github.io</h4>
-          <aside class="notes">
-              Foreign accent, name
-              Google translate, deal with it
-          </aside>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/CQbxPcB.png" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i204.photobucket.com/albums/bb14/oluja74/naslovna12-sadrzaj-web.jpg" alt="Meny">
-          </a>
-          <aside class="notes">
-            Not many things get translated into Bosnian
-            Graphics engine
-          </aside>
-        </section>
-      
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://www.xblafans.com/wp-content/uploads//2011/08/Grim-Fandango3.jpg" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://cdn.macrumors.com/article-new/2014/01/upgrades.jpg" style="width:800px" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/qCH182e.jpg" style="width:800px" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://upload.wikimedia.org/wikipedia/commons/8/88/Bright_red_tomato_and_cross_section02.jpg" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://www.symantec.com/business/support/library/BUSINESS/416-477-322/Add%20Printer%20Driver%20Wizard.PNG" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i3.kym-cdn.com/photos/images/newsfeed/000/288/648/776.gif" style="width:400px" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<h2>Data Persistence Framework</h2>
-        </section>
-        <section>
-					<h2>Benefits</h2>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="https://lh3.googleusercontent.com/-OvY_qF6RAVI/Ue-zkXOMnnI/AAAAAAAAWV8/atLrk1WahUM/w506-h750/uKujj.jpg.gif" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<h2>Way of reasoning about problems</h2>
-					<h2>Abstractions</h2>
-          <aside class="notes">
-            If Ember disappeared tomorrow
-            Angular Attack
-          </aside>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/NMTfFMA.jpg" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<h2>What problems does it solve?</h2>
-        </section>
-        <section>
-					<h2>Doing X sucks!</h2>
-        </section>
-        <section>
-					<h2>Use Y so X doesn't suck anymore</h2>
-        </section>
-        <section>
-					<h2>Too much logic in the view-Handlebars</h2>
-        </section>
-        <section>
-					<h2>Too much repetition-Rails</h2>
-        </section>
-        <section>
-					<h2>Current DB engines are too reliable-MongoDB</h2>
-          <aside class="notes">
-            Not just a list of features
-            It informs your world view
-          </aside>
-        </section>
-        <section>
-					<h2>Ember-Data</h2>
-					<h2>Data Persistence framework</h2>
-        </section>
-        <section>
-					<h2>Data persistence is a hard problem</h2>
-					<a class="image" href="" target="_blank">
-						<img src="http://www.popehat.com/wp-content/uploads/2013/03/no-shit-sherlock-2.jpg" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="https://scontent-b-sjc.xx.fbcdn.net/hphotos-prn2/v/t34.0-12/10152920_10203247969588111_1500622065_n.jpg?oh=fcc80c47d32a2b3784be972910e0d532&oe=53337911" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<h2>Code/data organisation in the front end</h2>
-        </section>
-        <section>
-					<h2>Data transformation</h2>
-					<h2>Asynchronicity</h2>
-					<h2>Caching</h2>
-        </section>
-        <section>
-					<h2>Easy/Hard</h2>
-        </section>
-        <section>
-					<h2>Data transformation-easy</h2>
-					<h2>Asynchronicity-medium</h2>
-					<h2>Caching-medium</h2>
-        </section>
-        <section>
-					<h2>Common/Unique</h2>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/Z9NtukO.png" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<h2>Easier problems should be locked down less</h2>
-        </section>
-        <section>
-          Adapter/Serializer-Store/Models
-          <aside class="notes">
-					Map nicely to Ember-Data's structure
-          </aside>
-        </section>
-        <section>
-					<h2>Data transformation</h2>
-        </section>
-        <section>
-					<h2>Easy</h2>
-          <aside class="notes">
-            Don't say easy, say tractable, trololololol
-          </aside>
-        </section>
-        <section>
-					<h2>Tractable</h2>
-        </section>
-        <section>
-					<pre><code data-trim contenteditable>
-user: {
-  id:1,
-  name: 'Igor',
-  slidesReady: false
-}
-					</code></pre>
-        </section>
-        <section>
-					<pre><code data-trim contenteditable>
-<user>
-  <id>1</id>
-  <name>1</name>
-  <slides_ready>1</slides_ready>
-</user>
-					</code></pre>
-        </section>
-        <section>
-					<pre><code data-trim contenteditable>
-user.get('name') -> 'Igor'
-user.set('slidesReady', true)
-					</code></pre>
-        </section>
-        <section>
-					<pre><code data-trim contenteditable>
-user.save() -> POST /user/1
-					</code></pre>
-        </section>
-        <section>
-					<h2>Easy</h2>
-					<h2>Custom</h2>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/coL9O8G.png" alt="Meny">
-          </a>
-        </section>
-        <section>
-          <blockquote>
-            "The hooks now are insanely better"
-            - Robert Jackson
-          </blockquote>
-          <aside class="notes">
-          Partially because we know
-          partially because we care less
-          </aside>
-        </section>
-        <section>
-					<pre><code data-trim contenteditable>
-App.UserSerializer = DS.RestSerializer.extend({
-  normalize: function(hash){
-    //DO CUSTOM CRAZY STUFF HERE
- } 
-})
-					</code></pre>
-        </section>
-        <section>
-					<pre><code data-trim contenteditable>
-App.UserSerializer = DS.RestSerializer.extend({
-  extractSingle: function(store, primaryType, payload){
-    //DO EVEN CRAZIER STUFF HERE
- },
-
-  extractArray: function(store, primaryType, payload){
-    //DO EVEN CRAZIER STUFF HERE
- } 
-})
-					</code></pre>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/8ttrpSd.jpg" alt="Meny">
-          </a>
-          <aside class="notes">
-					Nice defaults, and get out of the way
-          EASY TO OVERWITE
-          Gordon Ramsey
-          </aside>
-        </section>
-        <section>
-					<h2>Future: tighten up</h2>
-        </section>
-        <section>
-					<h2>Data transformation-easy</h2>
-					<h2>Asynchronicity-medium</h2>
-					<h2>Caching-medium</h2>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/dHABM8T.png" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<h2>Asynchronicity</h2>
-        </section>
-        <section>
-					<h2>Promises</h2>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="https://pbs.twimg.com/profile_images/3342514715/3fde89df63ea4dacf9de71369019df22.png" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/GSH4b6p.png" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<h2>Asynchronicity</h2>
-          <aside class="notes">
-					Before: Lazy materialization--example of how thinking about problems the right way simplifies them
-          </aside>
-        </section>
-        <section>
-					<h3>Before:</h3>
-					<pre><code data-trim contenteditable>
-user.find()
-user.onLoad( function(){
-  //DO THINGS
-});
-					</code></pre>
-        </section>
-        <section>
-					<h3>Current:</h3>
-					<pre><code data-trim contenteditable>
-store.find('user', 1).then( function(data){
-  data.get('name')
-});
-					</code></pre>
-        </section>
-        <section>
-					<h3>Current:</h3>
-					<pre><code data-trim contenteditable>
-comment = store.createRecord('comment')
-post = store.createRecord('post')
-post.save().then( function(data){
-  comment.set('post', data)
-  comment.save()
-});
-					</code></pre>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/n79WdxZ.jpg" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<h3>Current:</h3>
-					<pre><code data-trim contenteditable>
-App.User = DS.Model.extend({
-  name: DS.attr('string'),
-  friends: DS.hasMany('user', {async: true])
-})
-					</code></pre>
-        </section>
-        <section>
-					<h3>Current:</h3>
-					<pre><code data-trim contenteditable>
-App.User = DS.Model.extend({
-  name: DS.attr('string'),
-  friends: DS.hasMany('user', {async: false])
-})
-					</code></pre>
-        </section>
-        <section>
-					<h2>Bad idea :(</h2>
-        </section>
-        <section>
-					<h2>Fixture Adapter</h2>
-          <aside class="notes">
-            Go to docs
-          </aside>
-        </section>
-        <section>
-					<h2>Changes to the API should not impact App code</h2>
-        </section>
-        <section>
-					<h3>Future:</h3>
-					<pre><code data-trim contenteditable>
-App.User = DS.Model.extend({
-  name: DS.attr('string'),
-  friends: DS.hasMany('user')
-})
-
-user.get('friends').then( function(friends){
-  //DO THINGS
-});
-					</code></pre>
-        </section>
-        <section>
-					<h3>Future:</h3>
-					<pre><code data-trim contenteditable>
-user.get('friends').then( function(friends){
-  friends.objectAt(0).then( function(firstFriend) {
-    firstFriend.get('name');
-  });
-});
-					</code></pre>
-        </section>
-        <section>
-					<h2>Lazy arrays</h2>
-        </section>
-        <section>
-					<h3>Future:</h3>
-					<pre><code data-trim contenteditable>
-user.get('friends').then( function(friends){
-  friends.objectAt(0).then( function(firstFriend) {
-    firstFriend.get('name');
-  });
-});
-					</code></pre>
-        </section>
-        <section>
-      <h2>PromiseProxyMixin</h2>
-        </section>
-        <section>
-					<h3>Current:</h3>
-					<pre><code data-trim contenteditable>
-user: function(){
-  store.find('user', 1)
-}.property()
-
-friends: function(){
-  this.get('user.friends')
-}.property('user.friends')
-					</code></pre>
-        </section>
-        <section>
-					<h2>Data transformation</h2>
-					<h2>Asynchronicity</h2>
-					<h2>Caching</h2>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/Q4J4ZhD.png" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<h2>Caching</h2>
-        </section>
-        <section>
-					<h2>Identity map</h2>
-					<pre><code data-trim contenteditable>
-//On App Load
-var user1 = store.find('user', 1)
-
-//In User Settings controller
-var user2 = store.find('user', 1)
-
-user1 == user2
-					</code></pre>
-        </section>
-        <section>
-					<h2>Identity map</h2>
-					<pre><code data-trim contenteditable>
-            var person = store.find('person', 1)
-.
-var samePerson = store.find('person', 1)
-.
-.
-person.set('name', 'Igor')
-samePerson.get('name') -> 'Igor'
-					</code></pre>
-        </section>
-        <section>
-					<h2>Data transformation</h2>
-					<h2>Asyncronicity</h2>
-					<h2>Caching</h2>
-          <aside class="notes">
-          What kind of difficulty scale goes from easy to medium
-          </aside>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/fJEER0O.png" alt="Meny">
-          </a>
-        </section>
-        <section>
-					<h2>Huh?</h2>
-        </section>
-        <section>
-					<h2>Standardized data retrieval</h2>
-        </section>
-        <section>
-					<h2>Data transformation-easy</h2>
-					<h2>Asynchronicity-medium</h2>
-					<h2>Caching-medium</h2>
-          <aside class="notes">
-          What kind of difficulty scale goes from easy to medium
-          </aside>
-        </section>
-        <section>
-					<pre><code data-trim contenteditable>
-store.find('user', 1)
-					</code></pre>
-        </section>
-        <section>
-					<h2>My parents</h2>
-					<pre><code data-trim contenteditable>
-Me.get('lightbulb')
-					</code></pre>
-        </section>
-          <aside class="notes">
-            Affection
-          </aside>
-        </section>
-        <section>
-					<pre><code data-trim contenteditable>
-store.find('user', 1)
-
-user: { id:1,
-    name: 'Igor'
-},
- 
- emails:[ {id:1, text: 'A Few Good Slides'}] 
-}
-					</code></pre>
-        </section>
-        <section>
-					<h2>Data transformation-easy</h2>
-					<h2>Asynchronicity-medium</h2>
-					<h2>Caching-medium</h2>
-					<h2>Locality-hard</h2>
-        </section>
-        <section>
-					<h2>Locality</h2>
-        </section>
-        <section>
-					<h2>Relationships</h2>
-        </section>
-        <section>
-					<pre><code data-trim contenteditable>
-store.find('post', 1)
-
-post: { id:1,
-    text: 'EmberConf IS Awesome',
-    comments: [54]
-}
-					</code></pre>
-        </section>
-        <section>
-					<pre><code data-trim contenteditable>
-post: { id:1,
-    text: 'EmberConf IS Awesome',
-    comments: [54]
-}
-post.get('comments').length === 1
-
-store.find('comment', 1)
-comment: { id:1,
-           text: 'So Much Web',
-           post: 1 }
-
-post.get('comments').length === 2 
-					</code></pre>
-        </section>
-
-        <section>
-					<h2>Single source of truth</h2>
-        </section>
-    
-        <section>
-					<h2>Saving is easier</h2>
-					<h2>store.commit too hard</h2>
-        </section>
-    
-        <section>
-					<h2>Focus</h2>
-        </section>
-        <section>
-					<a class="image" href="" target="_blank">
-						<img src="http://i.imgur.com/kAHFi2x.png" alt="Meny">
-          </a>
-        </section>
-    
 				<section>
-				<h2>Thanks!</h2>
-             <a href="http://twitter.com/terzicigor">@terzicigor</a></small></br>
-             <a href="http://twitter.com/addepar">@addepar</a></small></br>
+					<h2>Trolling aside...</h2>
+				</section>
+				<section>
+					<h2>Lots of progress</h2>
+				</section>
+				<section>
+          <center>
+          <blockquote class="twitter-tweet" lang="en"><p>Just released Ember Data v1.0.0-beta.8! Please try it out! cc <a href="https://twitter.com/emberjs">@emberjs</a></p>&mdash; literally stanley (@fivetanley) <a href="https://twitter.com/fivetanley/statuses/472066677383757824">May 29, 2014</a></blockquote>
+          </center>
+				</section>
+        <section>
+					<a class="image" href="" target="_blank">
+						<img src="https://scontent-b-sjc.xx.fbcdn.net/hphotos-xpf1/t31.0-8/1974172_10201234705184609_752077358225574854_o.jpg" alt="Meny">
+          </a>
+          <aside class="notes">
+          Completely different skinny eastern european
+          </aside>
+        </section>
+				<section>
+					<h2>Single source of truth</h2>
+				</section>
+				<section>
+					<h2>Single source of truth</h2>
+					<h2>WIP...</h2>
+          <aside class="notes">
+          Quit job
+          Consulting
+          </aside>
+        </section>
+				<section>
+					<h2>Abstraction/code quality</h2>
+					<h2>Ergonomics</h2>
+				</section>
+				<section>
+					<h2>Mongo troll</h2>
+				</section>
+				<section>
+					<h2>Abstraction/code quality</h2>
+					<h2>Ergonomics</h2>
+				</section>
+        <section>
+          <center>
+          <blockquote class="twitter-tweet" lang="en"><p>Just released Ember Data v1.0.0-beta.8! Please try it out! cc <a href="https://twitter.com/emberjs">@emberjs</a></p>&mdash; literally stanley (@fivetanley) <a href="https://twitter.com/fivetanley/statuses/472066677383757824">May 29, 2014</a></blockquote>
+          </center>
+				</section>
+				<section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/zNiIqOy.png" alt="Meny">
+          </a>
+				</section>
+				<section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/rVKNLEg.png" alt="Meny">
+          </a>
+				</section>
+				<section>
+					<a class="image" href="" target="_blank">
+						<img src="http://i.imgur.com/xX4oy0X.png" alt="Meny">
+          </a>
+				</section>
+        <section>
+					<a class="image" href="" target="_blank">
+						<img src="http://lms.umwblogs.org/files/2011/03/Instructure_logo_2.jpg" alt="Meny">
+          </a>
+        </section>
+				<section>
+					<h2>Meta Data/Pagination</h2>
+				</section>
+				<section>
+					<h2>Current status</h2>
+				</section>
+				<section>
+					<h2>hasMany reloading</h2>
+					<pre><code data-trim contenteditable>
+user.get('friends').reload()
+					</code></pre>
+				</section>
+				<section>
+					<h2>Find coalescing</h2>
+					<pre><code data-trim contenteditable>
+store.find('user', 1)
+.
+.
+.
+store.find('user', 2)
+					</code></pre>
+				</section>
+				<section>
+					<h2>Find coalescing</h2>
+					<pre><code data-trim contenteditable>
+/users?ids[]=1&ids[]=2
+					</code></pre>
+        </section>
+				<section>
+					<h2>Nested url support</h2>
+					<pre><code data-trim contenteditable>
+store.find('post', 2)
+					</code></pre>
+				</section>
+				<section>
+					<h2>Nested url support</h2>
+					<pre><code data-trim contenteditable>
+/users/1/posts/2
+					</code></pre>
+				</section>
+				<section>
+					<h2>Nested url support</h2>
+					<pre><code data-trim contenteditable>
+store.find('post', 1, {user: 1})
+					</code></pre>
+				</section>
+				<section>
+					<h2>Future work</h2>
+				</section>
+				<section>
+					<h2>More ergonomic fixes</h2>
+					<h2>SSOT</h2>
+					<h2>Docs</h2>
+					<h2>Serializer refactor</h2>
+				</section>
+				<section>
+					<h2>Weekly meeting</h2>
+				</section>
+				<section>
+					<h2>Get involved</h2>
+				</section>
+        <section>
+					<h2>Thanks</h2>
+          <h2>@terzicigor</h2>
         </section>
 
 			</div>
