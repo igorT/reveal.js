@@ -1,0 +1,36 @@
+First time at the famous NYC meetup
+
+Meetups are awesome:
+  You learn, eat, get insipred, play bingo
+
+Kinda annoying though:
+  People show off really cool stuff you can't use
+
+Kinda like Hacker News, really awesome things available if you live in the exact 2 blocks in SF where the founders live
+
+There is only one thing worse than having to watch people show off new cool things:
+  Having access to cool new things and then having it taken away - Firefly
+
+Its like flying business class
+
+"Turns out static analysis is easy"
+
+Ember Cli Migrator
+Today's technology today
+
+Alpha software
+
+Not a live demo! - I am not a masochist
+What we can do:
+  1. Migrate a class
+  2. Figure out Ember/Ember data imports
+  3. Figure out App imports
+  4. Split multiple files
+
+How does it work?
+
+Left to do:
+  1. Interactivity
+  2. Fully migrated app
+
+Thanks!
