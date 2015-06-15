@@ -1,0 +1,30 @@
+ED 1.0 -------
+
+Into:
+  Happy to be here
+  So many people
+
+People:
+  Fivetanley
+  Bmac
+  Wecc
+  Me
+  Tomhuda
+
+1.0 Issue
+
+Performance
+Relationships
+
+Async/await ->
+  Brief intro
+  Why it matters
+  Testing
+  Async relationships
+
+JSON Api support
+  Out of the box
+  Pagination support
+
+Serializer refactor
+Find apis
