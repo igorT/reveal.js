@@ -1,36 +1,106 @@
-First time at the famous NYC meetup
+Hello, my name is Igor
+Weather, excited to be here
+Talk about 1.0
+Horrible idea
+Somewhere between when I
+Bold move
+Why it's just a number
+Shutter island
+We have shipped, and I am very excited
+But first, lets retrospect
 
-Meetups are awesome:
-  You learn, eat, get insipred, play bingo
+-Were/history(history joke?)
 
-Kinda annoying though:
-  People show off really cool stuff you can't use
+Ever since the dawn of time?
+Started in 2011
+Ember is older
+Ember had benefit of sproutcore,
+Ember Data was early
+Glimmer of hope
 
-Kinda like Hacker News, really awesome things available if you live in the exact 2 blocks in SF where the founders live
+Why do version numbers matter:
+  1. They don't
+  2. Communicate which version
+  3. Marketing
+  4. SemVer
 
-There is only one thing worse than having to watch people show off new cool things:
-  Having access to cool new things and then having it taken away - Firefly
+Dev cycles:
+  1. Red green refactor
+  2. Big bang release with patches
+  3. Ask Linus and hope he doesn't smite you with his anger
+  4. Tick Tock
 
-Its like flying business class
+Intel
 
-"Turns out static analysis is easy"
+Refactor/Feature
 
-Ember Cli Migrator
-Today's technology today
+Ember.js
+MetalViews
 
-Alpha software
+HTMLBars
+attrs
 
-Not a live demo! - I am not a masochist
-What we can do:
-  1. Migrate a class
-  2. Figure out Ember/Ember data imports
-  3. Figure out App imports
-  4. Split multiple files
+Glimmer
+2.0 stuff
 
-How does it work?
+Ember Data
+JJ-Abrams
+Lots of things
 
-Left to do:
-  1. Interactivity
-  2. Fully migrated app
+Coalescing
+whatever
 
-Thanks!
+SSOT
+features
+
+Internal Model refactor
+features
+
+Where are we today:
+A year ago
+I gave a talk last year
+Since then:
+  Single source of truth
+  Find coalescing
+  10 betas
+
+
+19 betas
+deprecations, not full SemVer but close
+
+Ember Data 1.13
+Ember Data 2.0beta1
+
+What does 1.0 mean for US:
+  Cleanup
+  Standardize
+  Enable
+
+Hope & change, why ember
+
+JSON Api
+JSON Api old adapter
+
+JSON Api
+
+The old adapter/serializer Api was crap
+
+New adapter serializer api
+
+Deprecations
+Ember inspector support
+
+Standardized find api
+   Talk through new example use case
+
+Lots of smaller things:
+  store.query/queryRecord
+
+
+How to upgrade:
+-Future
+  -references
+  -polymorphism
+  -
+
+Sponsors:
