@@ -66,12 +66,15 @@
 					<aside class="notes">
 						Excited - I get to be here
 						My entire professional career has been around Ember
+					  Due no credit to myself
 					</aside>
 				</section>
 				<section>
 						<a class="image" href="" target="_blank">
 								<img src="./images/silicon-valley.jpg" alt="Meny">
 				  </a>
+					<aside class="notes">
+					</aside>
 				</section>
 				<section>
 								<img style="border:0px; box-shadow:none;"" src="./images/addepar.png" alt="Meny">
@@ -114,100 +117,217 @@
 				</section>
 				<section>
 					Sherlock img
-								<img style="border:0px; box-shadow:none;"" src="./images/sherlock.svg" alt="Meny">
+					<img style="border:0px; box-shadow:none;"" src="./images/sherlock.svg" alt="Meny">
 					<aside class="notes">
 						A real thourhgouth investigation
 						I took me couple hours before I devoloped a very strong opinion
 					</aside>
 				</section>
-
+				<section>
+					<img style="border:0px; box-shadow:none;"" src="./images/backbone.png" alt="Meny">
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<aside class="notes">
+						Luckily I came to my senses
+					</aside>
+				</section>
 				<section>Ember Data</section>
-				<section>Community</section>
-				<section>Due to no fault of my own</section>
-				<section>2012</section>
-				<section>Addepar</section>
-				<section>No Bribes</section>
 				<section>Sample Ember code</section>
-				<section>Backbone</section>
-				<section>Ever sicne</section>
-				<section>Seven years</section>
-				<section>Why are we still Relevant</section>
-				<section>Old is not an argument</section>
-				<section>Museum</section>
-				<section>What we learned</section>
-				<section>Why it matters</section>
+
+				<section>Ever since</section>
+				<section>
+					Seven years
+					<aside class="notes">
+						It's easy to just be here patting ourselves on the back
+						but old is not an argument
+					</aside>
+				</section>
+				<section>
+					<img style="border:0px; box-shadow:none;"" src="./images/louvre.jpg" alt="Meny">
+					<aside class="notes">
+						Unless you're pitching yourself to a museum, but then competition is quite stiff
+					</aside>
+				</section>
+
+				<section>
+					Why are we still relevant
+					<aside class="notes">
+						As a Community We made a series of bets and predictions that paid off
+					</aside>
+				</section>
+
+				<section>
+					<h3>What we learned</h3>
+					<h3>Where we are today</h3>
+					<h3>How do we solve for tomorrow</h3>
+				</section>
 
 				<!--2012 is long ago -->
 				<section>2011</section>
-				<section>Build systems in JS</section>
-				<section>IE</section>
-				<section>CoffeScript</section>
-				<section>Round Earth</section>
+				<section>
+					<img style="border:0px; box-shadow:none;"" src="./images/stark.png" alt="Meny">
+				</section>
+				<section>
+					Actively Debated:
+				    Should you use a build system	
+				</section>
+				<section>
+					Actively Debated:
+					IE6 support
+				</section>
+				<section>
+					Actively Debated:
+					Is it ok to build SPA
+				</section>
+				<section>
+					<img style="border:0px; box-shadow:none;"" src="./images/earth.jpg" alt="Meny">
+				</section>
 
 				<!-- SPA -->
-				<section>SPA</section>
-				<section>What were the correct bets</section>
-				<section>Freebies</section>
-				<section> Break things appart and attack them? </section>
-
 				<section>
-					Isolated Model Layer
-					DS.Model
+					Ember Data
+					ORM for client side
+					<aside class="notes">
+						As a Community We made a series of bets and predictions that paid off
+						Break things appart and attack them? 
+					</aside>
 				</section>
 
 				<section>
-					- Schema
-					- Mirage
-					-  
-				</section>
+					Isolated Model Layer with a schema
+						<pre><code data-trim contenteditable>
+import DS from 'ember-data';
+import { computed } from '@ember/object';
 
+export default DS.Model.extend({
+	firstName: DS.attr(),
+	lastName: DS.attr(),
+
+	fullName: computed('firstName', 'lastName', function() {
+		return `${this.firstName} ${this.lastName}`;
+	})
+});
+					</code></pre>-
+					<aside class="notes">
+            Data access patterns, 
+              isolation from UI state
+              loading flags
+					</aside>
+				</section>
 
 				<section>
-					- Isolated Serialization Layer
-					- Consistency
-					- JSON API
-					- 
+					<img style="border:0px; box-shadow:none;"" src="./images/mirage.png" alt="Meny">
+					<aside class="notes">
+            Alternative Model layers
+					</aside>
 				</section>
-
-
+				<section>
+					<img style="border:0px; box-shadow:none;"" src="./images/fastboot.png" alt="Meny">
+					<aside class="notes">
+					</aside>
+				<section>
+          Isolated Serialization Layer
+				</section>
+				<section>
+					<img style="border:0px; box-shadow:none;"" src="./images/json-api.png" alt="Meny">
+					<aside class="notes">
+          
+					</aside>
 				<section>Consistency the happy path
 				</section>
-
 				<section>
-					- Identity Map
-					- Preloading
+          Bets that paid off:
+          - Isolation
 				</section>
 				<section>
-					Sam Selikoff Tweet
+          Identity Map
+          <img style="border:0px; box-shadow:none;"" src="./images/sam.png" alt="Meny">
 				</section>
-
 				<section>
-					- Foreign key constitency
+          Relationship handling 
+				</section>
+				<section>
+					<img style="border:0px; box-shadow:none;"" src="./images/addon.png" alt="Meny">
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					Isolated Model Layer with a schema
+						<pre><code data-trim contenteditable>
+import DS from 'ember-data';
+import { computed } from '@ember/object';
+
+const { attr, hasMany } = DS;
+
+export default DS.Model.extend({
+  file: attr(),
+  variables: attr(),
+  functions: attr(),
+
+  classes: hasMany('class', { async: false, }),
+  components: hasMany('class', { async: false, }),
+
+  /*
+    This gives us a way to link to a model, since we don't always link by the actual ID:
+    {{link-to 'item' model.routingId}}
+    Possible refactoring is to always link by actual ID, and implement redirects.
+  */
+  routingId: computed('id', function() {
+    return `modules/${this.get('id')}`;
+  })
+});
+					</code></pre>-
+					<aside class="notes">
+            Data access patterns, 
+              isolation from UI state
+              loading flags
+					</aside>
 				</section>
 
 				<section>
 					Diagram
 				</section>
 				<section>
-					If this was 2015 we would be done
+					2015
+				</section>
+				<section>
+          <img style="border:0px; box-shadow:none;"" src="./images/octane.png" alt="Meny">
+					<aside class="notes">
+            Go live on a beach as DHH does
+          
+					</aside>
 				</section>
 				<section>
 					Octane
+            <pre><code data-trim contenteditable>
+import DS from 'ember-data';
+const { Model, attr } = DS;
+
+export default class Person extends Model {
+  @attr('string') firstName;
+  @attr('date') birthday;
+}
+            </code></pre>-
 				</section>
 				<section>
-					RunLopp
+					RunLoop
 				</section>
 				<section>
-					How does 2012 differ from 2019
+          <img style="border:0px; box-shadow:none;"" src="./images/ambition.png" alt="Meny">
+					<aside class="notes">
+            Ambition is a really annyoing goal to have
+					</aside>
 				</section>
 				<section>
-					How does 2012 differ from 2025
+					2019
 				</section>
 				<section>
-					Ambition
+          2025
 				</section>
 				<section>
-					Sam Selikoff Tweet 
+          <img style="border:0px; box-shadow:none;"" src="./images/sam.png" alt="Meny">
 					<aside class="notes">
 						Lets go back to that tweet I was so proud of a few minutes ago
 					</aside>
@@ -222,7 +342,7 @@
 					- Simple data loading patterns
 					- Simple cache managament
 					- Hundreds of model classes
-					- Consistent, default payloads (   )
+					- Consistent, default payloads 
 					- DX
 				</section>
 				<section>
