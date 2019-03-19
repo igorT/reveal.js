@@ -7,10 +7,33 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<style type="text/css">
+			.left {
+				left:-8.33%;
+				text-align: left;
+				float: left;
+				width:50%;
+				z-index:-10;
+			  }
+			  
+			  .right {
+				left:31.25%;
+				top: 75px;
+				float: right;
+				text-align: right;
+				z-index:-10;
+				width:50%;
+			  }
+			  .img {
+				  max-height: 98% !important;
+				  max-width: 98% !important;
+			  }
+
+		</style>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -25,19 +48,85 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- Me in Ember-->
-				<section>Hi</section>
-				<section>Igor</section>
+				<section>
+					<h2>Dealing with Data in 2019</h2>
+					<div class="right">
+						<h3>Igor Terzic</h3>
+					</div>
+				</section>
+				<section>
+					<h2>Good morning!</h2>
+					<aside class="notes">
+						I'm really excited to be here
+						You can tell because there is a ! 
+					</aside>
+				</section>
+				<section>
+					Ember Conf group pic
+					<aside class="notes">
+						Excited - I get to be here
+						My entire professional career has been around Ember
+					</aside>
+				</section>
+				<section>
+						<a class="image" href="" target="_blank">
+								<img src="./images/silicon-valley.jpg" alt="Meny">
+				  </a>
+				</section>
+				<section>
+								<img style="border:0px; box-shadow:none;"" src="./images/addepar.png" alt="Meny">
+				</section>
+				<section>
+								<img style="border:0px; box-shadow:none;"" src="./images/swing.png" alt="Meny">
+					<aside class="notes">
+						It's so old that transparent alpha channels werent a thing
+					</aside>
+				</section>
+				<section>
+								<img style="border:0px; box-shadow:none;"" src="./images/coffeescript.png" alt="Meny">
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+								<img style="border:0px; box-shadow:none;"" src="./images/grunt.jpg" alt="Meny">
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+								<img style="border:0px; box-shadow:none;"" src="./images/ember.svg" alt="Meny">
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+						<div style="display:flex;   justify-content:center">
+							<div style="width:33%">
+								<img style="border:0px; box-shadow:none;"" src="./images/coffeescript.png" alt="Meny">
+							</div>
+							<div style="width:33%">
+								<img style="border:0px; box-shadow:none;"" src="./images/grunt.jpg" alt="Meny">
+							</div>
+							<div style="width:33%">
+								<img style="border:0px; box-shadow:none;"" src="./images/ember.svg" alt="Meny">
+							</div>
+						</div>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					Sherlock img
+								<img style="border:0px; box-shadow:none;"" src="./images/sherlock.svg" alt="Meny">
+					<aside class="notes">
+						A real thourhgouth investigation
+						I took me couple hours before I devoloped a very strong opinion
+					</aside>
+				</section>
+
 				<section>Ember Data</section>
-				<section>Excited - I get to be here</section>
 				<section>Community</section>
 				<section>Due to no fault of my own</section>
 				<section>2012</section>
 				<section>Addepar</section>
 				<section>No Bribes</section>
-				<section>Silicon Valley</section>
-				<section>Java Swing App</section>
-				<section>Old Ember logo/code</section>
-				<section>A real thourhgouth investigation</section>
 				<section>Sample Ember code</section>
 				<section>Backbone</section>
 				<section>Ever sicne</section>
@@ -47,30 +136,34 @@
 				<section>Museum</section>
 				<section>What we learned</section>
 				<section>Why it matters</section>
+
 				<!--2012 is long ago -->
 				<section>2011</section>
 				<section>Build systems in JS</section>
 				<section>IE</section>
 				<section>CoffeScript</section>
 				<section>Round Earth</section>
+
 				<!-- SPA -->
 				<section>SPA</section>
 				<section>What were the correct bets</section>
 				<section>Freebies</section>
 				<section> Break things appart and attack them? </section>
 
-				<section>Isolated Model Layer
-						DS.Model
+				<section>
+					Isolated Model Layer
+					DS.Model
 				</section>
 
 				<section>
 					- Schema
 					- Mirage
-					- 
+					-  
 				</section>
 
 
-				<section>Isolated Serialization Layer
+				<section>
+					- Isolated Serialization Layer
 					- Consistency
 					- JSON API
 					- 
@@ -167,9 +260,26 @@
 					- Ember Observer/Addons
 				</section>
 				<section>
-					- Ember MegaMorphic Model
+					- Advanced Data Handling Capabilites
+					- Performance at scale
+					- DX
+
 					- Ember Data StoreFront
+					- Ember MegaMorphic Model
 					- Orbit.js
+				</section>
+
+				<section>
+					- Ember Store Front 
+				</section>
+				<section>
+					- Ember Megamorphic Model
+				</section>
+				<section>
+					- Orbit JS
+				</section>
+				<section>
+					- 2018
 				</section>
 			</div>
 		</div>
@@ -182,6 +292,9 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				width: '100%',
+				height: '100%',
+				margin: '0',
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
