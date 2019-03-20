@@ -52,6 +52,7 @@
 					<h2>Dealing with Data in 2019</h2>
 					<div class="right">
 						<h3 style="margin-right: 80px">Igor Terzic</h3>
+						<h4 style="margin-right: 80px">@terzicigor</h4>
 					</div>
 				</section>
 				<section>
@@ -345,9 +346,11 @@ let record = store.createRecord('user', { name: 'HeroicEric' });
             Ambition is a really annyoing goal to have
 					</aside>
         </section>
+
 				<section>
 					2012 -> 2019
-				</section>
+        </section>
+
 				<section>
           2019 -> 2025
         </section>
@@ -400,15 +403,16 @@ let record = store.createRecord('user', { name: 'HeroicEric' });
 				<section>
           - Performance at scale
           - Api complexity?
-					- Advanced Data Handling Capabilites
-          - DX
 
-					- Ember Data StoreFront
-					- Ember MegaMorphic Model
-          - Orbit.js
-          (Talk about model fragments?)
+          - Advanced Data Handling Capabilites
+
+          - DX and learning
         </section>
 
+
+        <section>
+Model Fragmnets
+        </section>
 
 				<section>
 						<pre><code data-trim contenteditable>
@@ -525,20 +529,110 @@ export default DS.Model.extend({
 					</aside>
         </section>
 				<section>
-					Ember Megamorphic Model
+					Ember MegaMorphic Model (ember-m3)
         </section>
 				<section>
 Separates schema and class info
         </section>
 				<section>
+All Models have the same backing class 
 						<pre><code data-trim contenteditable>
-
-
+let user: MegamorphicModel = store.findRecord('user', 'thorsteinsson');
+let company: MegamorphicModel = store.findRecord('company', 'LinkedIn');
           </code></pre>-
+				</section>
+				<section>
+Image of no models
+        </section>
+
+				<section>
+          Dynamic Schema
+        </section>
+
+				<section>
+Arbitrarily Nested Models
+        </section>
+				<section>
+  Template only components
+						<pre><code data-trim contenteditable>
+          </code></pre>-
+        </section>
+
+				<section>
+Trade offs
+					<aside class="notes">
+            Perfect example of what we need to happen
+            Bring back into Ember Data
+					</aside>
+        </section>
+				<section>
+          - Performance at scale
+          - Api complexity?
+					<aside class="notes">
+            In case addon docs grow to thousands of pages, we are all set
+					</aside>
+        </section>
+				<section>
+					<img style="border:0px; box-shadow:none;"" src="./images/addon.png" alt="Meny">
+					<aside class="notes">
+					</aside>
 				</section>
 
 				<section>
+          - Advanced Data Handling Capabilites
+          - DX
+        </section>
+
+				<section>
+          Data loading patterns
+				</section>
+				<section>
+						<pre><code data-trim contenteditable>
+store.findRecord('user', 'bryancrotaz')
+          </code></pre>-
+        </section>
+				<section>
+						<pre><code data-trim contenteditable>
+store.findAll('user')
+          </code></pre>-
+        </section>
+
+				<section>
+Similar to JSON API if your payload is flat
+        </section>
+
+				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/storefront.png" alt="Meny">
+        </section>
+
+				<section>
+          <img style="border:0px; box-shadow:none;"" src="./images/observer-data.png" alt="Meny">
+        </section>
+
+				<section>
+				  2019
+					<aside class="notes">
+            Okay great we have all of these addons, what do we do??
+            So all of these addons are great
+					</aside>
+        </section>
+				<section>
+       Good core
+       Addons that are problem solving
+        </section>
+
+				<section>
+          Decompose
+        </section>
+
+				<section>
+          Large standard library
+					<aside class="notes">
+					</aside>
+        </section>
+
+				<section>
+          Every Ember Developer is a potential Addon Author
         </section>
 
 				<section>
@@ -546,11 +640,31 @@ Separates schema and class info
         </section>
 
 				<section>
-					- 2018
+          Every Ember Developer is a potential Addon Author
         </section>
 
 				<section>
 					Dan Gebharts talk
+        </section>
+
+				<section>
+          <img style="border:0px; box-shadow:none;"" src="./images/core.png" alt="Meny">
+        </section>
+				<section>
+          <img style="border:0px; box-shadow:none;"" src="./images/core-2.png" alt="Meny">
+        </section>
+
+				<section>
+          We are recruiting!
+        </section>
+
+				<section>
+          Thanks!
+          <h3 style="margin-right: 80px">@terzicigor</h3>
+					<aside class="notes">
+            Thanks for not falling asleep
+					</aside>
+
         </section>
 			</div>
 		</div>
