@@ -51,8 +51,8 @@
 				<section>
 					<h2>Dealing with Data in 2019</h2>
 					<div class="right">
-						<h3 style="margin-right: 80px">Igor Terzic</h3>
-						<h4 style="margin-right: 80px">@terzicigor</h4>
+						<h3 style="margin-right: 130px">Igor Terzic</h3>
+						<h4 style="margin-right: 130px">@terzicigor</h4>
 					</div>
 				</section>
 				<section>
@@ -428,6 +428,9 @@ or relationships and then go live on a beach or race cars as DHH does
         </section>
 
 				<section>
+        </section>
+
+				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/tom.png" alt="Meny">
         </section>
 
@@ -648,238 +651,6 @@ Trade offs
             Bring back into Ember Data
 					</aside>
         </section>
-				<section>
-          - Performance at scale
-          - Api complexity?
-					<aside class="notes">
-            In case addon docs grow to thousands of pages, we are all set
-					</aside>
-        </section>
-				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/addon.png" alt="Meny">
-					<aside class="notes">
-
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/sam.png" alt="Meny">
-					<aside class="notes">
-            Lets go back to that tweet I was so proud of a few minutes ago
-            Why does Ember+Data work so well for it
-					</aside>
-        </section>
-
-        <section>
-          Consistent API
-					<aside class="notes">
-We shouldn't optimize the API too much
-					</aside>
-        </section>
-
-				<section>
-          Scale & Performance
-        </section>
-
-				<section>
-          Advanced Data Management
-        </section>
-
-				<section>
-          FindAll
-        </section>
-
-				<section>
-					  Good core
-        </section>
-
-				<section>
-					 How to expand 
-        </section>
-
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/overflow.png" alt="Meny">
-				</section>
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/overflow2.png" alt="Meny">
-				</section>
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/observer.png" alt="Meny">
-        </section>
-				<section>
-          - Performance at scale
-          - Api complexity?
-
-          - Advanced Data Handling Capabilites
-
-          - DX and learning
-        </section>
-
-
-        <section>
-Model Fragmnets
-        </section>
-
-				<section>
-						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-
-const { attr, hasMany } = DS;
-
-export default DS.Model.extend({
-  file: attr(),
-  variables: attr(),
-  functions: attr(),
-
-  classes: hasMany('class', { async: false, }),
-  components: hasMany('class', { async: false, }),
-  routingId: computed('id', function() {
-    return `modules/${this.get('id')}`;
-  })
-});
-					</code></pre>-
-					<aside class="notes">
-          Isolated Model Layer with a schema
-					</aside>
-				</section>
-				<section>
-          Schema Information
-						<pre><code data-trim contenteditable>
-{
-  attributes: ['file', 'variables', 'functions'],
-  relationships: ['classes', 'components']
-}
-          </code></pre>-
-				</section>
-				<section>
-						<pre><code data-trim contenteditable>
-let user = store.findRecord('user', 'NullVoxPopuli');
-					</code></pre>-
-        </section>
-				<section>
-						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-
-const { attr, hasMany } = DS;
-
-export default DS.Model.extend({
-  file: attr(),
-  variables: attr(),
-  functions: attr(),
-
-  classes: hasMany('class', { async: false, }),
-  components: hasMany('class', { async: false, }),
-  routingId: computed('id', function() {
-    return `modules/${this.get('id')}`;
-  })
-});
-					</code></pre>-
-					<aside class="notes">
-            Isn't an issue, you can transmit more data, and is actually kinda neat
-					</aside>
-        </section>
-				<section>
-One class per type in your api
-					<aside class="notes">
-            No matter how inconsequential, simple or without further use
-					</aside>
-        </section>
-				<section>
-          1 Model
-        </section>
-				<section>
-          100 Model
-        </section>
-				<section>
-          10000 Models
-					<aside class="notes">
-10 0000 Classes
-Explain why deeply nested, lots of projections
-					</aside>
-        </section>
-				<section>
-Deeply nested
-        </section>
-				<section>
-          Thousands of classes
-        </section>
-				<section>
-A schema might not be neccessary
-        </section>
-				<section>
-Provided in the api payload
-        </section>
-				<section>
-						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-
-const { attr, hasMany } = DS;
-
-export default DS.Model.extend({
-  file: attr(),
-  variables: attr(),
-  functions: attr(),
-
-  classes: hasMany('class', { async: false, }),
-  components: hasMany('class', { async: false, }),
-  routingId: computed('id', function() {
-    return `modules/${this.get('id')}`;
-  })
-});
-					</code></pre>-
-					<aside class="notes">
-            Isn't an issue, you can transmit more data, and is actually kinda neat
-					</aside>
-        </section>
-				<section>
-					Ember MegaMorphic Model (ember-m3)
-        </section>
-				<section>
-Separates schema and class info
-        </section>
-				<section>
-All Models have the same backing class 
-						<pre><code data-trim contenteditable>
-let user: MegamorphicModel = store.findRecord('user', 'thorsteinsson');
-let company: MegamorphicModel = store.findRecord('company', 'LinkedIn');
-          </code></pre>-
-				</section>
-				<section>
-Image of no models
-        </section>
-
-				<section>
-          Dynamic Schema
-        </section>
-
-				<section>
-Arbitrarily Nested Models
-        </section>
-				<section>
-  Template only components
-						<pre><code data-trim contenteditable>
-          </code></pre>-
-        </section>
-
-				<section>
-Trade offs
-					<aside class="notes">
-            Perfect example of what we need to happen
-            Bring back into Ember Data
-					</aside>
-        </section>
-				<section>
-          - Performance at scale
-          - Api complexity?
-					<aside class="notes">
-            In case addon docs grow to thousands of pages, we are all set
-					</aside>
-        </section>
-				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/addon.png" alt="Meny">
-					<aside class="notes">
-					</aside>
-				</section>
 
 				<section>
 Advanced Data Handling Capabilites
