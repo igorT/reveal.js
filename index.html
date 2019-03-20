@@ -62,11 +62,12 @@
 						You can tell because there is a ! 
 					</aside>
 				</section>
-				<section>
-					Ember Conf group pic
+				<section data-background-image="./images/collage.png">
 					<aside class="notes">
-						Excited - I get to be here
-						My entire professional career has been around Ember
+            Excited - I get to be here
+            I asked Leah literally can't fit
+            My entire professional career has been around Ember
+            Even though I did other things on and off
 					  Due no credit to myself
 					</aside>
 				</section>
@@ -135,6 +136,12 @@
 						Luckily I came to my senses
 					</aside>
 				</section>
+				<section>
+          <img style="border:0px; box-shadow:none;"" src="./images/li.png" alt="Meny">
+					<aside class="notes">
+            Really
+					</aside>
+				</section>
 
 				<section>
 					<h2>Eight years</h2>
@@ -145,7 +152,7 @@
         </section>
 
 				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/louvre.jpg" alt="Meny">
+					<img style="border:0px; box-shadow:none;" src="./images/louvre.jpg" alt="Meny">
 					<aside class="notes">
 						Unless you're pitching yourself to a museum, but then competition is quite stiff
 					</aside>
@@ -154,14 +161,13 @@
 				<section>
 					<h2>Why are we still relevant</h2>
 					<aside class="notes">
+            Other than extremely tireless work of so many people
 						As a Community We made a series of bets and predictions that paid off
 					</aside>
 				</section>
 
 				<section>
-          <div class="fragment fade-in">
-            <h3>What we learned</h3>
-          </div>
+          <h3>What we learned</h3>
           <div class="fragment fade-in">
             <h3>Where we are today</h3>
           </div>
@@ -204,19 +210,47 @@
 					<aside class="notes">
             Thats the enviornment that ED was born in
 					</aside>
-				</section>
+        </section>
+
+				<section>
+          <h2>Actively Debated:</h2>
+          <div class="">
+            <h3>
+              Should you use a build system	
+            </h3>
+          </div>
+          <div class="">
+            <h3>
+              IE6 support
+            </h3>
+          </div>
+          <div class="">
+            <h3>
+              Should Apps require JavaScript
+            </h3>
+          </div>
+          <div class="">
+            <h3>
+              Single Page Apps
+            </h3>
+          </div>
+          <aside class="notes">
+             With things like Babel, es6 classes, typescript so many things have gotten better
+             My accent is the only thing that hasn't
+              Wider Ember, but ED as well in that enviornment made couple of key decisions
+             </aside>
+        </section>
 
 				<!-- SPA -->
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/ember-data.png" alt="Meny">
 					<aside class="notes">
-						As a Community We made a series of bets and predictions that paid off
-						Break things appart and attack them? 
+           Wider Ember, but ED as well in that enviornment made couple of key decisions
 					</aside>
 				</section>
 
 				<section>
-					Isolated Model Layer with a schema
+					Isolated Model Layer
 						<pre><code data-trim contenteditable>
 import DS from 'ember-data';
 import { computed } from '@ember/object';
@@ -224,27 +258,27 @@ import { computed } from '@ember/object';
 export default DS.Model.extend({
   firstName: DS.attr(),
   lastName: DS.attr(),
-
   fullName: computed('firstName', 'lastName', function() {
     return `${this.firstName} ${this.lastName}`;
   })
 });
-					</code></pre>-
+					</code></pre>
 					<aside class="notes">
             Data access patterns, 
               isolation from UI state
               loading flags
+              not using arbitrary json
 					</aside>
 				</section>
 				<section>
-					Isolated Model Layer with a schema
+					Isolated Model Layer
 						<pre><code data-trim contenteditable>
 // in component
 model.save()
 
 // in template
 {{model.isSaving}}
-					</code></pre>-
+					</code></pre>
 				</section>
 				<section>
 					Isolated Model Layer with a schema
@@ -260,10 +294,12 @@ export default DS.Model.extend({
     return `${this.firstName} ${this.lastName}`;
   })
 });
-					</code></pre>-
+					</code></pre>
 					<aside class="notes">
-            Data access patterns, 
-              isolation from UI state
+            Schema information
+            Allowed the system to do so much more conventionally
+            Serializer
+            Adapter
 					</aside>
 				</section>
 				<section>
@@ -282,7 +318,7 @@ export default DS.Serializer.extend({
     return payload;
   }
 });
-					</code></pre>-
+					</code></pre>
 					<aside class="notes">
 Adapter/Serializer pattern:
 addon ecosystem, ActiveModelSerializer
@@ -296,6 +332,7 @@ swapability
 				</section>
 				<section>Embracing the Consistency
 					<aside class="notes">
+            Consistent conventional REST Apis
             Productivity in minutes
 					</aside>
 				</section>
@@ -313,8 +350,12 @@ immediate Productivity out of the box
 				</section>
 				<section>
           Identity Map
-					<aside class="notes">
-
+				</section>
+				<section>
+          Identity Map
+          <pre><code data-trim contenteditable>
+store.findRecord('user', 1)
+          </code></pre>
 				</section>
 				<section>
           Store Cache & Identity Map
@@ -326,17 +367,37 @@ immediate Productivity out of the box
 					</aside>
 				</section>
 				<section>
-          <h2>
           Relationship consistency
-          </h2>
-				</section>
+          <div class="fragment">
+						<pre><code data-trim contenteditable>
+import DS from 'ember-data';
+import { computed } from '@ember/object';
+
+const User = DS.Model.extend({
+  firstName: DS.attr(),
+  lastName: DS.attr(),
+
+  bestFriend: DS.belongsTo('user'),
+
+  fullName: computed('firstName', 'lastName', function() {
+    return `${this.firstName} ${this.lastName}`;
+  })
+});
+          </code></pre>
+        </div>
+        </section>
+        <section>
+          Productive, conventional system
+        </section>
 				<section>
 					<img style="border:0px; box-shadow:none;"" src="./images/addon.png" alt="Meny">
 					<aside class="notes">
+            The number of lines of code you need to write to get a full stack solution 
+            is quite minimal
+            Throughout the stack, testing, generators etc
 					</aside>
-				</section>
+        </section>
 				<section>
-					Isolated Model Layer with a schema
 						<pre><code data-trim contenteditable>
 import DS from 'ember-data';
 import { computed } from '@ember/object';
@@ -347,28 +408,17 @@ export default DS.Model.extend({
   file: attr(),
   variables: attr(),
   functions: attr(),
-
   classes: hasMany('class', { async: false, }),
   components: hasMany('class', { async: false, }),
-
-  /*
-    This gives us a way to link to a model, since we don't always link by the actual ID:
-    {{link-to 'item' model.routingId}}
-    Possible refactoring is to always link by actual ID, and implement redirects.
-  */
   routingId: computed('id', function() {
     return `modules/${this.get('id')}`;
   })
 });
-					</code></pre>-
+					</code></pre>
 					<aside class="notes">
-            Throughout the stack, testing, generators etc
+            There isn't that much code in there
 					</aside>
 				</section>
-
-				<section>
-					Diagram
-        </section>
 
 				<section>
 					2015
@@ -392,7 +442,7 @@ export default class Person extends Model {
   @attr('string') firstName;
   @attr('date') birthday;
 }
-            </code></pre>-
+            </code></pre>
 				</section>
 				<section>
 Removed the runloop in tests
@@ -416,6 +466,7 @@ or relationships and then go live on a beach or race cars as DHH does
           <img style="border:0px; box-shadow:none;"" src="./images/ambition.png" alt="Meny">
 					<aside class="notes">
             Ambition is a really annyoing goal to have
+            For once in life I would love to be done
 					</aside>
         </section>
 
@@ -428,50 +479,60 @@ or relationships and then go live on a beach or race cars as DHH does
         </section>
 
 				<section>
+          <h3>Scale and Performance</h3>
         </section>
 
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/tom.png" alt="Meny">
         </section>
 
-        <!-- 
-          web is evolving?
-        -->
-        
+				<section>
+          <h3>Advanced Data fetching, caching and mutating</h3>
+        </section>
+
+				<section>
+          <img style="border:0px; box-shadow:none;"" src="./images/dan.png" alt="Meny">
+					<aside class="notes">
+            Also GraphQL is on the rise
+					</aside>
+        </section>
+
+				<section>
+          <h3>DX and visibility</h3>
+        </section>
+
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/sam.png" alt="Meny">
 					<aside class="notes">
             Lets go back to that tweet I was so proud of a few minutes ago
             Why does Ember+Data work so well for it
+            It has a consistent JSON API
+            It has straightforward data loading
 					</aside>
         </section>
 
-        <section>
+        <!--
+
+          
           Consistent API
 					<aside class="notes">
 We shouldn't optimize the API too much
 					</aside>
         </section>
-
-				<section>
-          Scale & Performance
+        -->
+        <section>
+          The Curse of being too early
+					<aside class="notes">
+            Now that pirate of carribean movie would suck
+					</aside>
         </section>
 
-				<section>
-          !!!!
-          Advanced Data Management
-        </section>
-
-				<section>
-          FindAll
-        </section>
-
-				<section>
-					 Good core
-        </section>
-
-				<section>
-					 How to expand 
+        <section>
+          The Curse of a large standard library
+					<aside class="notes">
+            The problem is trying to iterate on new apis while supporting back compat
+            If you are a new library, it doesn't matter you can throw it out and start again
+					</aside>
         </section>
 
 				<section>
@@ -483,21 +544,9 @@ We shouldn't optimize the API too much
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/observer.png" alt="Meny">
         </section>
+
 				<section>
-          - Performance at scale
-          - Api complexity?
-
-          - Advanced Data Handling Capabilites
-
-          - DX and learning
-        </section>
-
-        <section>
-Model Fragments
-        </section>
-
-        <section>
-Model Fragments
+          Performance at scale
         </section>
 
 				<section>
@@ -530,12 +579,12 @@ export default DS.Model.extend({
   attributes: ['file', 'variables', 'functions'],
   relationships: ['classes', 'components']
 }
-          </code></pre>-
+          </code></pre>
 				</section>
 				<section>
 						<pre><code data-trim contenteditable>
 let user = store.findRecord('user', 'NullVoxPopuli');
-					</code></pre>-
+					</code></pre>
         </section>
 				<section>
 						<pre><code data-trim contenteditable>
@@ -609,13 +658,16 @@ export default DS.Model.extend({
     return `modules/${this.get('id')}`;
   })
 });
-					</code></pre>-
+					</code></pre>
 					<aside class="notes">
             Isn't an issue, you can transmit more data, and is actually kinda neat
 					</aside>
         </section>
 				<section>
 					Ember MegaMorphic Model (ember-m3)
+        </section>
+				<section>
+          <img style="border:0px; box-shadow:none;"" src="./images/m3.png" alt="Meny">
         </section>
 				<section>
 Separates schema and class info
@@ -625,10 +677,10 @@ All Models have the same backing class
 						<pre><code data-trim contenteditable>
 let user: MegamorphicModel = store.findRecord('user', 'thorsteinsson');
 let company: MegamorphicModel = store.findRecord('company', 'LinkedIn');
-          </code></pre>-
+          </code></pre>
 				</section>
 				<section>
-Image of no models
+          <img style="border:0px; box-shadow:none;"" src="./images/no-model.png" alt="Meny">
         </section>
 
 				<section>
@@ -639,9 +691,9 @@ Image of no models
 Arbitrarily Nested Models
         </section>
 				<section>
-  Template only components
-						<pre><code data-trim contenteditable>
-          </code></pre>-
+          Template only component
+          <br>
+          <img style="border:0px; box-shadow:none;"" src="./images/template-only.png" alt="Meny">
         </section>
 
 				<section>
@@ -653,7 +705,10 @@ Trade offs
         </section>
 
 				<section>
-Advanced Data Handling Capabilites
+          <h3>Performance at scale</h3>
+          <div class="fragment">
+            <h3>Advanced Data fetching, caching and mutating</h3>
+          </div>
         </section>
 
 				<section>
@@ -662,24 +717,28 @@ Advanced Data Handling Capabilites
 				<section>
 						<pre><code data-trim contenteditable>
 store.findRecord('user', 'bryancrotaz')
-          </code></pre>-
+          </code></pre>
         </section>
 				<section>
 						<pre><code data-trim contenteditable>
 store.findAll('user')
-          </code></pre>-
-        </section>
-
-				<section>
-Similar to JSON API if your payload is flat
+          </code></pre>
         </section>
 
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/storefront.png" alt="Meny">
         </section>
 
+<!----------------------ADDD HEEERREEE   -->
+
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/observer-data.png" alt="Meny">
+        </section>
+
+				<section>
+          <img style="border:0px; box-shadow:none;"" src="./images/dan.png" alt="Meny">
+					<aside class="notes">
+					</aside>
         </section>
 
 				<section>
@@ -689,23 +748,68 @@ Similar to JSON API if your payload is flat
             So all of these addons are great
 					</aside>
         </section>
+
 				<section>
-       Good core
-       Addons that are problem solving
+          <img style="border:0px; box-shadow:none;"" src="./images/dan-2.png" alt="Meny">
         </section>
 
 				<section>
-          Large standard library
+          The curse of the large standard library
 					<aside class="notes">
 					</aside>
         </section>
 
 				<section>
-          Every Ember Developer is a potential Addon Author
+          <div style="height:900px">
+          <img style="border:0px; box-shadow:none;"" src="./images/monolith.png" alt="Meny">
+          </div>
+					<aside class="notes">
+          </aside>
         </section>
 
 				<section>
-          Decompose
+          <img style="border:0px; box-shadow:none;"" src="./images/observer-data.png" alt="Meny">
+					<aside class="notes">
+            These addons are great
+            However if you look under the surface, it gets really gnarly real fast
+            Lots of private API usage
+            Things are hard to do
+            And even when you do do them, you get model fragments
+          </aside>
+        </section>
+
+				<section>
+          <img style="border:0px; box-shadow:none;"" src="./images/fragment.png" alt="Meny">
+        </section>
+        <section>
+          <h3>Hard to develop addons</h3>
+          <div class="fragment">
+            <h3>Hard to integrate addons into core</h3>
+          </div>
+          <div class="fragment">
+            <h3>Hard to add new features</h3>
+          </div>
+					<aside class="notes">
+            Ember Data team is not special
+					</aside>
+        </section>
+
+				<section>
+          <h2>Every Ember Developer is a potential Addon Author</h2>
+					<aside class="notes">
+            Strength of the community
+					</aside>
+        </section>
+
+        <section>
+          2019
+        </section>
+
+				<section>
+          <h3>All of the addons</h3>
+          <div class="fragment">
+            <h3>No Private Apis</h3>
+          </div>
         </section>
 
 				<section>
@@ -713,16 +817,9 @@ Similar to JSON API if your payload is flat
         </section>
 
 				<section>
-					- Orbit JS
-        </section>
-
-				<section>
-					Dan Gebharts talk
-        </section>
-
-				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/core.png" alt="Meny">
         </section>
+
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/core-2.png" alt="Meny">
         </section>
@@ -732,8 +829,10 @@ Similar to JSON API if your payload is flat
         </section>
 
 				<section>
+          <h2>
           Thanks!
-          <h3 style="margin-right: 80px">@terzicigor</h3>
+          </h2>
+          <h3>@terzicigor</h3>
 					<aside class="notes">
             Thanks for not falling asleep
 					</aside>
