@@ -182,7 +182,6 @@
           </h3>
 				</section>
 				<section>
-				<section>
           <h2>Actively Debated:</h2>
           <h3>
             IE6 support
@@ -306,7 +305,8 @@ export default DS.Model.extend({
 
 				<section>
 					Diagram
-				</section>
+        </section>
+
 				<section>
 					2015
 				</section>
@@ -329,14 +329,15 @@ export default class Person extends Model {
             </code></pre>-
 				</section>
 				<section>
+          Removed the runloop in tests
             <pre><code data-trim contenteditable>
 let record = run(() => {
   return store.createRecord('user', { name: 'HeroicEric' })
 });
-            </code></pre>-
+            </code></pre>
             <pre><code data-trim contenteditable>
 let record = store.createRecord('user', { name: 'HeroicEric' });
-            </code></pre>-
+            </code></pre>
 				</section>
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/ambition.png" alt="Meny">
@@ -344,7 +345,6 @@ let record = store.createRecord('user', { name: 'HeroicEric' });
             Ambition is a really annyoing goal to have
 					</aside>
         </section>
-
 				<section>
 					2012 -> 2019
 				</section>
@@ -364,25 +364,30 @@ let record = store.createRecord('user', { name: 'HeroicEric' });
 					</aside>
         </section>
 
-				<section>
-					- Simple data loading patterns
-					- Simple cache managament
-					- Hundreds of model classes
-					- Consistent, default payloads 
+        <section>
+          Consistent Payloads
         </section>
-        
+
 				<section>
-					- Advanced Data Handling Capabilites
-					- Performance at scale
-					- DX
+          Scale & Performance
+        </section>
+
+				<section>
+          Advanced Data Management
+        </section>
+
+				<section>
+          FindAll
         </section>
 
 				<section>
 					  Good core
         </section>
+
 				<section>
 					 How to expand 
         </section>
+
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/overflow.png" alt="Meny">
 				</section>
@@ -391,28 +396,159 @@ let record = store.createRecord('user', { name: 'HeroicEric' });
 				</section>
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/observer.png" alt="Meny">
-				</section>
+        </section>
 				<section>
+          - Performance at scale
+          - Api complexity?
 					- Advanced Data Handling Capabilites
-					- Performance at scale
-					- DX
+          - DX
 
 					- Ember Data StoreFront
 					- Ember MegaMorphic Model
-					- Orbit.js
+          - Orbit.js
+          (Talk about model fragments?)
+        </section>
+
+
+				<section>
+						<pre><code data-trim contenteditable>
+import DS from 'ember-data';
+import { computed } from '@ember/object';
+
+const { attr, hasMany } = DS;
+
+export default DS.Model.extend({
+  file: attr(),
+  variables: attr(),
+  functions: attr(),
+
+  classes: hasMany('class', { async: false, }),
+  components: hasMany('class', { async: false, }),
+  routingId: computed('id', function() {
+    return `modules/${this.get('id')}`;
+  })
+});
+					</code></pre>-
+					<aside class="notes">
+          Isolated Model Layer with a schema
+					</aside>
 				</section>
+				<section>
+          Schema Information
+						<pre><code data-trim contenteditable>
+{
+  attributes: ['file', 'variables', 'functions'],
+  relationships: ['classes', 'components']
+}
+          </code></pre>-
+				</section>
+				<section>
+						<pre><code data-trim contenteditable>
+let user = store.findRecord('user', 'NullVoxPopuli');
+					</code></pre>-
+        </section>
+				<section>
+						<pre><code data-trim contenteditable>
+import DS from 'ember-data';
+import { computed } from '@ember/object';
+
+const { attr, hasMany } = DS;
+
+export default DS.Model.extend({
+  file: attr(),
+  variables: attr(),
+  functions: attr(),
+
+  classes: hasMany('class', { async: false, }),
+  components: hasMany('class', { async: false, }),
+  routingId: computed('id', function() {
+    return `modules/${this.get('id')}`;
+  })
+});
+					</code></pre>-
+					<aside class="notes">
+            Isn't an issue, you can transmit more data, and is actually kinda neat
+					</aside>
+        </section>
+				<section>
+One class per type in your api
+					<aside class="notes">
+            No matter how inconsequential, simple or without further use
+					</aside>
+        </section>
+				<section>
+          1 Model
+        </section>
+				<section>
+          100 Model
+        </section>
+				<section>
+          10000 Models
+					<aside class="notes">
+10 0000 Classes
+Explain why deeply nested, lots of projections
+					</aside>
+        </section>
+				<section>
+Deeply nested
+        </section>
+				<section>
+          Thousands of classes
+        </section>
+				<section>
+A schema might not be neccessary
+        </section>
+				<section>
+Provided in the api payload
+        </section>
+				<section>
+						<pre><code data-trim contenteditable>
+import DS from 'ember-data';
+import { computed } from '@ember/object';
+
+const { attr, hasMany } = DS;
+
+export default DS.Model.extend({
+  file: attr(),
+  variables: attr(),
+  functions: attr(),
+
+  classes: hasMany('class', { async: false, }),
+  components: hasMany('class', { async: false, }),
+  routingId: computed('id', function() {
+    return `modules/${this.get('id')}`;
+  })
+});
+					</code></pre>-
+					<aside class="notes">
+            Isn't an issue, you can transmit more data, and is actually kinda neat
+					</aside>
+        </section>
+				<section>
+					Ember Megamorphic Model
+        </section>
+				<section>
+Separates schema and class info
+        </section>
+				<section>
+						<pre><code data-trim contenteditable>
+
+
+          </code></pre>-
+				</section>
+
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/storefront.png" alt="Meny">
-				</section>
-				<section>
-					- Ember Megamorphic Model
-				</section>
+        </section>
+
 				<section>
 					- Orbit JS
-				</section>
+        </section>
+
 				<section>
 					- 2018
-				</section>
+        </section>
+
 				<section>
 					Dan Gebharts talk
         </section>
