@@ -480,6 +480,10 @@ or relationships and then go live on a beach or race cars as DHH does
 
 				<section>
           <h3>Scale and Performance</h3>
+					<aside class="notes">
+            Billion internet user with subpar phones
+            Very very large apps
+					</aside>
         </section>
 
 				<section>
@@ -508,6 +512,10 @@ or relationships and then go live on a beach or race cars as DHH does
             Why does Ember+Data work so well for it
             It has a consistent JSON API
             It has straightforward data loading
+
+            Okay so you have identified the problem
+            Great job, thats usually the hardest part
+            Now go and solve it
 					</aside>
         </section>
 
@@ -569,7 +577,8 @@ export default DS.Model.extend({
 });
 					</code></pre>-
 					<aside class="notes">
-            DS.Model
+            Standard issue DS.Model
+            Gives two types of info
 					</aside>
 				</section>
 				<section>
@@ -610,9 +619,10 @@ export default DS.Model.extend({
 					</aside>
         </section>
 				<section>
-One class per type in your api
+One class per type
 					<aside class="notes">
             No matter how inconsequential, simple or without further use
+
 					</aside>
         </section>
 				<section>
@@ -628,8 +638,24 @@ One class per type in your api
 Explain why deeply nested, lots of projections
 					</aside>
         </section>
-				<section>
-Deeply nested
+        <section>
+						<pre><code data-trim contenteditable>
+"id": "1",
+"type": "book"
+"attributes": {
+  "name": "Harry Potter and the Sorcerer's Stone",
+  "author": {
+    "name": "JK Rowling"
+    "location": {
+      "country": "UK"
+      "city": "London"
+    }
+  }
+}
+					</code></pre>-
+					<aside class="notes">
+            You would need a model for every layer
+					</aside>
         </section>
 				<section>
           Thousands of classes
@@ -690,6 +716,25 @@ let company: MegamorphicModel = store.findRecord('company', 'LinkedIn');
 				<section>
 Arbitrarily Nested Models
         </section>
+        <section>
+						<pre><code data-trim contenteditable>
+"id": "1",
+"type": "book"
+"attributes": {
+  "name": "Harry Potter and the Sorcerer's Stone",
+  "author": {
+    "name": "JK Rowling"
+    "location": {
+      "country": "UK"
+      "city": "London"
+    }
+  }
+}
+					</code></pre>-
+					<aside class="notes">
+            You would need a model for every layer
+					</aside>
+        </section>
 				<section>
           Template only component
           <br>
@@ -728,9 +773,47 @@ store.findAll('user')
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/storefront.png" alt="Meny">
         </section>
+				<section>
+          Default FindAll
+        <pre><code data-trim contenteditable>
+export default Route.extend({
+  hasLoadedAll: false,
 
-<!----------------------ADDD HEEERREEE   -->
+  model() {
+    return this.store.findAll('post', { reload: !this.hasLoadedAll });
+  },
 
+  afterModel() {
+    this.hasLoadedAll = true;
+  }
+});
+            
+                      </code></pre>
+                      <aside class="notes">
+                      </aside>
+                  </section>
+				<section>
+          With StoreFront
+        <pre><code data-trim contenteditable>
+
+default Route.extend({
+  beforeModel() {
+    return this.store.loadRecords('post');
+  },
+
+  model() {
+    return this.store.peekAll('post');
+  }
+});
+
+                      </code></pre>
+                  </section>
+				<section>
+          Query caching
+					<aside class="notes">
+            Both m3 and storefront  
+					</aside>
+				</section>
 				<section>
           <img style="border:0px; box-shadow:none;"" src="./images/observer-data.png" alt="Meny">
         </section>
@@ -854,6 +937,12 @@ store.findAll('user')
         margin: '0',
         fragments: true,
         history: true,
+        keyboard: {
+          38: 'prev', // go to the next slide when the ENTER key is pressed
+          40: 'next', // go to the next slide when the ENTER key is pressed
+
+        },
+
 
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
