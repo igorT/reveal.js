@@ -49,868 +49,449 @@
 			<div class="slides">
 				<!-- Me in Ember-->
 				<section>
-					<h2>Dealing with Data in 2019</h2>
+					<h2>M3 Introduction</h2>
 					<div class="right">
 						<h3 style="margin-right: 130px">Igor Terzic</h3>
-						<h4 style="margin-right: 130px">@terzicigor</h4>
 					</div>
 				</section>
 				<section>
 					<h2>Good morning!</h2>
 					<aside class="notes">
-						I'm really excited to be here
-						You can tell because there is a ! 
-					</aside>
-				</section>
-				<section data-background-image="./images/collage.png">
-					<aside class="notes">
-            Excited - I get to be here
-            I asked Leah literally can't fit
-            My entire professional career has been around Ember
-            Even though I did other things on and off
-					  Due no credit to myself
+            - Client web frameworks
+            - Ember since 2012
+            - LinkedIn since November
 					</aside>
 				</section>
 				<section>
-						<a class="image" href="" target="_blank">
-								<img src="./images/silicon-valley.jpg" alt="Meny">
-				  </a>
-					<aside class="notes">
-					</aside>
+          <h2>Frontend Data Handling in Ember</h2>
+          <h2>M3</h2>
 				</section>
 				<section>
-								<img style="border:0px; box-shadow:none;"" src="./images/addepar.png" alt="Meny">
+          <h2>Raw Ajax</h2>
 				</section>
 				<section>
-								<img style="border:0px; box-shadow:none;"" src="./images/swing.png" alt="Meny">
-					<aside class="notes">
-						It's so old that transparent alpha channels werent a thing
-					</aside>
+          <h2>jQuery</h2>
+          <h2>fetch</h2>
+          <h2>xhr</h2>
 				</section>
-				<section>
-								<img style="border:0px; box-shadow:none;"" src="./images/coffeescript.png" alt="Meny">
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-								<img style="border:0px; box-shadow:none;"" src="./images/grunt.svg" alt="Meny">
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-								<img style="border:0px; box-shadow:none;"" src="./images/ember.svg" alt="Meny">
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-						<div style="display:flex;   justify-content:center">
-							<div style="width:33%">
-								<img style="border:0px; box-shadow:none;"" src="./images/coffeescript.png" alt="Meny">
-							</div>
-							<div style="width:33%">
-								<img style="border:0px; box-shadow:none;"" src="./images/grunt.svg" alt="Meny">
-							</div>
-							<div style="width:33%">
-								<img style="border:0px; box-shadow:none;"" src="./images/ember.svg" alt="Meny">
-							</div>
-						</div>
-					<aside class="notes">
-					</aside>
-        </section>
-				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/sherlock.jpg" alt="Meny">
-					<aside class="notes">
-            Archival Footage
-						A real thourhgouth investigation
-						I took me couple hours before I devoloped a very strong opinion
-					</aside>
-				</section>
-				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/backbone.png" alt="Meny">
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/ember-data.png" alt="Meny">
-					<aside class="notes">
-						Luckily I came to my senses
-					</aside>
-				</section>
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/li.png" alt="Meny">
-					<aside class="notes">
-            Really
-					</aside>
-				</section>
-
-				<section>
-					<h2>Eight years</h2>
-					<aside class="notes">
-						It's easy to just be here patting ourselves on the back
-						but old is not an argument
-					</aside>
-        </section>
-
-				<section>
-					<img style="border:0px; box-shadow:none;" src="./images/louvre.jpg" alt="Meny">
-					<aside class="notes">
-						Unless you're pitching yourself to a museum, but then competition is quite stiff
-					</aside>
-				</section>
-
-				<section>
-					<h2>Why are we still relevant</h2>
-					<aside class="notes">
-            Other than extremely tireless work of so many people
-						As a Community We made a series of bets and predictions that paid off
-					</aside>
-				</section>
-
-				<section>
-          <h3>What we learned</h3>
-          <div class="fragment fade-in">
-            <h3>Where we are today</h3>
-          </div>
-          <div class="fragment">
-            <h3>How do we solve for tomorrow</h3>
-          </div>
-				</section>
-
-				<!--2012 is long ago -->
-				<section>2011</section>
-				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/stark.png" alt="Meny">
-				</section>
-				<section>
-          <h2>Actively Debated:</h2>
-          <div class="fragment fade-in">
-            <h3>
-              Should you use a build system	
-            </h3>
-          </div>
-          <div class="fragment fade-in">
-            <h3>
-              IE6 support
-            </h3>
-          </div>
-          <div class="fragment fade-in">
-            <h3>
-              Should Apps require JavaScript
-            </h3>
-          </div>
-          <div class="fragment fade-in">
-            <h3>
-              Single Page Apps
-            </h3>
-          </div>
-        </section>
-
-				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/earth.jpg" alt="Meny">
-					<aside class="notes">
-            Thats the enviornment that ED was born in
-					</aside>
-        </section>
-
-				<section>
-          <h2>Actively Debated:</h2>
-          <div class="">
-            <h3>
-              Should you use a build system	
-            </h3>
-          </div>
-          <div class="">
-            <h3>
-              IE6 support
-            </h3>
-          </div>
-          <div class="">
-            <h3>
-              Should Apps require JavaScript
-            </h3>
-          </div>
-          <div class="">
-            <h3>
-              Single Page Apps
-            </h3>
-          </div>
-          <aside class="notes">
-             With things like Babel, es6 classes, typescript so many things have gotten better
-             My accent is the only thing that hasn't
-              Wider Ember, but ED as well in that enviornment made couple of key decisions
-             </aside>
-        </section>
-
-				<!-- SPA -->
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/ember-data.png" alt="Meny">
-					<aside class="notes">
-           Wider Ember, but ED as well in that enviornment made couple of key decisions
-					</aside>
-				</section>
-
-				<section>
-					Isolated Model Layer
-						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-
-export default DS.Model.extend({
-  firstName: DS.attr(),
-  lastName: DS.attr(),
-  fullName: computed('firstName', 'lastName', function() {
-    return `${this.firstName} ${this.lastName}`;
-  })
-});
-					</code></pre>
-					<aside class="notes">
-            Data access patterns, 
-              isolation from UI state
-              loading flags
-              not using arbitrary json
-					</aside>
-				</section>
-				<section>
-					Isolated Model Layer
-						<pre><code data-trim contenteditable>
-// in component
-model.save()
-
-// in template
-{{model.isSaving}}
-					</code></pre>
-				</section>
-				<section>
-					Isolated Model Layer with a schema
-						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-
-export default DS.Model.extend({
-  firstName: DS.attr(),
-  lastName: DS.attr(),
-
-  fullName: computed('firstName', 'lastName', function() {
-    return `${this.firstName} ${this.lastName}`;
-  })
-});
-					</code></pre>
-					<aside class="notes">
-            Schema information
-            Allowed the system to do so much more conventionally
-            Serializer
-            Adapter
-					</aside>
-				</section>
-				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/mirage.png" alt="Meny">
-					<aside class="notes">
-            Alternative Model layers
-					</aside>
-				</section>
-				<section>
-          Isolated Serialization and Network Layer
-						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-
-export default DS.Serializer.extend({
-  normalizeResponse(store, primaryModelClass, payload) {
-    return payload;
-  }
-});
-					</code></pre>
-					<aside class="notes">
-Adapter/Serializer pattern:
-addon ecosystem, ActiveModelSerializer
-swapability
-					</aside>
-				</section>
-				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/fastboot.png" alt="Meny">
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>Embracing the Consistency
-					<aside class="notes">
-            Consistent conventional REST Apis
-            Productivity in minutes
-					</aside>
-				</section>
-				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/json-api.png" alt="Meny">
-					<aside class="notes">
-immediate Productivity out of the box
-					</aside>
-				</section>
-				<section>
-          <h2>
-          Bets that paid off:
-          </h2>
-          <h3>Isolating layers</h3>
-				</section>
-				<section>
-          Identity Map
-				</section>
-				<section>
-          Identity Map
-          <pre><code data-trim contenteditable>
-store.findRecord('user', 1)
-          </code></pre>
-				</section>
-				<section>
-          Store Cache & Identity Map
-          <img style="border:0px; box-shadow:none;"" src="./images/sam.png" alt="Meny">
-					<aside class="notes">
-   I was so happy when I saw this tweet:
-    1. Cause I think our stuff is awesome
-    2. I was like yes, great job Sam, I don't have to do anything myself
-					</aside>
-				</section>
-				<section>
-          Relationship consistency
-          <div class="fragment">
-						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-
-const User = DS.Model.extend({
-  firstName: DS.attr(),
-  lastName: DS.attr(),
-
-  bestFriend: DS.belongsTo('user'),
-
-  fullName: computed('firstName', 'lastName', function() {
-    return `${this.firstName} ${this.lastName}`;
-  })
-});
-          </code></pre>
-        </div>
-        </section>
         <section>
-          Productive, conventional system
-        </section>
-				<section>
-					<img style="border:0px; box-shadow:none;"" src="./images/addon.png" alt="Meny">
-					<aside class="notes">
-            The number of lines of code you need to write to get a full stack solution 
-            is quite minimal
-            Throughout the stack, testing, generators etc
-					</aside>
-        </section>
-				<section>
 						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-
-const { attr, hasMany } = DS;
-
-export default DS.Model.extend({
-  file: attr(),
-  variables: attr(),
-  functions: attr(),
-  classes: hasMany('class', { async: false, }),
-  components: hasMany('class', { async: false, }),
-  routingId: computed('id', function() {
-    return `modules/${this.get('id')}`;
-  })
-});
+/**
+	* XHR service to allow fetching API data without using Ember Data.
+  *
+  * @module Services
+  * @class xhr
+  */
+  export default Service.extend({
+		locale: inject(),
+		tracking: inject(),
+		pemberlyNetwork: inject(),
+		fetch(url, settings = {}, ttl = null) {
+			const acceptedMethod = ['GET', 'POST', undefined];
+		...
+	)}
 					</code></pre>
 					<aside class="notes">
-            There isn't that much code in there
-					</aside>
-				</section>
-
-				<section>
-					2015
-        <aside class="notes">
-          Very tactical talk
 					</aside>
         </section>
-
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/octane.png" alt="Meny">
-					<aside class="notes">
-					</aside>
-				</section>
-				<section>
-  Native Classes
-            <pre><code data-trim contenteditable>
-import DS from 'ember-data';
-const { Model, attr } = DS;
-
-export default class Person extends Model {
-  @attr('string') firstName;
-  @attr('date') birthday;
-}
-            </code></pre>
-				</section>
-				<section>
-Removed the runloop in tests
-            <pre><code data-trim contenteditable>
-let record = run(() => {
-  return store.createRecord('user', { name: 'HeroicEric' })
-});
-            </code></pre>
-            <pre><code data-trim contenteditable>
-let record = store.createRecord('user', { name: 'HeroicEric' });
-            </code></pre>
-					<aside class="notes">
-Very tactical talk
-We have a thing that works decently, well, there are some sore points
-legacy and confusing things, lets focus on fixing those: cache queries,
-or relationships and then go live on a beach or race cars as DHH does
-					</aside>
-        </section>
-
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/ambition.png" alt="Meny">
-					<aside class="notes">
-            Ambition is a really annyoing goal to have
-            For once in life I would love to be done
-					</aside>
-        </section>
-
-				<section>
-					2012 -> 2019
-        </section>
-
-				<section>
-          2019 -> 2025
-        </section>
-
-				<section>
-          <h3>Scale and Performance</h3>
-					<aside class="notes">
-            Billion internet user with subpar phones
-            Very very large apps
-					</aside>
-        </section>
-
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/tom.png" alt="Meny">
-        </section>
-
-				<section>
-          <h3>Advanced Data fetching, caching and mutating</h3>
-        </section>
-
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/dan.png" alt="Meny">
-					<aside class="notes">
-            Also GraphQL is on the rise
-					</aside>
-        </section>
-
-				<section>
-          <h3>DX and visibility</h3>
-        </section>
-
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/sam.png" alt="Meny">
-					<aside class="notes">
-            Lets go back to that tweet I was so proud of a few minutes ago
-            Why does Ember+Data work so well for it
-            It has a consistent JSON API
-            It has straightforward data loading
-
-            Okay so you have identified the problem
-            Great job, thats usually the hardest part
-            Now go and solve it
-					</aside>
-        </section>
-
-        <!--
-
-          
-          Consistent API
-					<aside class="notes">
-We shouldn't optimize the API too much
-					</aside>
-        </section>
-        -->
-        <section>
-          The Curse of being too early
-					<aside class="notes">
-            Now that pirate of carribean movie would suck
-					</aside>
-        </section>
-
-        <section>
-          The Curse of a large standard library
-					<aside class="notes">
-            The problem is trying to iterate on new apis while supporting back compat
-            If you are a new library, it doesn't matter you can throw it out and start again
-					</aside>
-        </section>
-
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/overflow.png" alt="Meny">
-				</section>
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/overflow2.png" alt="Meny">
-				</section>
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/observer.png" alt="Meny">
-        </section>
-
-				<section>
-          Performance at scale
-        </section>
-
 				<section>
 						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-
-const { attr, hasMany } = DS;
-
-export default DS.Model.extend({
-  file: attr(),
-  variables: attr(),
-  functions: attr(),
-
-  classes: hasMany('class', { async: false, }),
-  components: hasMany('class', { async: false, }),
-  routingId: computed('id', function() {
-    return `modules/${this.get('id')}`;
-  })
+yield this.xhr.post(`${API_ENDPOINTS.lisaAccounts}/${accountId}`, {
+	headers: { 'x-restli-method': 'partial_update' },
+	data: JSON.stringify(postData),
 });
-					</code></pre>-
+					</code></pre>
+        </section>
+				<section>
+          <h2>Ember Data</h2>
+				</section>
+				<section>
+						<pre><code data-trim contenteditable>
+/**
+* The model for account.
+*
+* @module Models
+* @class account
+*/
+export default DS.Model.extend(Validations, {
+ /**
+	* i18n service
+	*
+	* @property i18n
+	* @private
+	*/
+ i18n: inject(),
+
+ /**
+	* Billing parent reference id for the account
+	* Enterprise only
+	*
+	* @property
+	*/
+ billingParentReferenceId: DS.attr('string'),
+
+ /**
+	* Billing parent reference type for the account
+	* Enterprise only
+	*
+	* @property
+	*/
+ billingParentReferenceType: DS.attr('string'),
+
+ /**
+	* Billing reference id for the account
+	* Enterprise only
+	* Optional
+	*
+	* @property
+	*/
+ billingReferenceId: DS.attr('string'),
+					</code></pre>
+				</section>
+				<section>
+						<pre><code data-trim contenteditable>
+  * Task to open edit campaign group modal
+  *
+  * @method openCampaignGroupEditModal
+  * @public
+  */
+  openCampaignGroupEditModal: task(function*(id) {
+		const campaignGroupModel = yield this.store.findRecord('campaignGroup', id);
+		this.set('campaignGroupToModify', campaignGroupModel);
+		this.set('isEditCampaignGroupModal', true);
+		this.set('isCampaignGroupAddEditModalOpen', true);
+  }).drop(),	
+					</code></pre>
+				</section>
+				<section>
+          <h2>Ember Data</h2>
+				</section>
+				<section>
+					<h2>Caching</h2>
+						<pre><code data-trim contenteditable>
+yield this.store.findRecord('campaignGroup', id);
+					</code></pre>
+				</section>
+				<section>
+          <h2>Modeling</h2>
+						<pre><code data-trim contenteditable>
+/**
+* The model for account.
+*
+* @module Models
+* @class account
+*/
+export default DS.Model.extend(Validations, {
+ /**
+	* Billing parent reference id for the account
+	* Enterprise only
+	*
+	* @property
+	*/
+ billingParentReferenceId: DS.attr('string'),
+ ... 
+});
+					</code></pre>
+				</section>
+				<section>
+          <h2>Schemas</h2>
+						<pre><code data-trim contenteditable>
+/**
+* The model for account.
+*
+* @module Models
+* @class account
+*/
+export default DS.Model.extend(Validations, {
+ /**
+	* Billing parent reference id for the account
+	* Enterprise only
+	*
+	* @property
+	*/
+ billingParentReferenceId: DS.attr('string'),
+ ... 
+});
+					</code></pre>
+				</section>
+
+				<section>
+          <h2>Conventional</h2>
+          <h2>Adapter/Serializer</h2>
+				</section>
+				<section>
+          <h2>Common functionality and support</h2>
 					<aside class="notes">
-            Standard issue DS.Model
-            Gives two types of info
+						Both from the community and internally
 					</aside>
 				</section>
 				<section>
-          Schema Information
+          <h2>Ember Data</h2>
+          <h3>Caching</h3>
+          <h3>Modeling</h3>
+          <h3>Schemas</h3>
+          <h3>Conventional</h3>
+          <h3>Common functionality and support</h3>
+					<aside class="notes">
+						Both from the community and internally
+					</aside>
+				</section>
+				<section>
+          <h2>Raw Ajax</h2>
+				</section>
+				<section>
+          <h2>Straightforward</h2>
+				</section>
+				<section>
 						<pre><code data-trim contenteditable>
+yield this.xhr.post(`${API_ENDPOINTS.lisaAccounts}/${accountId}`, {
+	headers: { 'x-restli-method': 'partial_update' },
+	data: JSON.stringify(postData),
+});
+					</code></pre>
+				</section>
+				<section>
+          <h2>Fast</h2>
+				</section>
+				<section>
+          <h2>Easy to access nested properties</h2>
+				</section>
+				<section>
+          <h2>Flexible</h2>
+				</section>
+				<section>
+          <h2>M3</h2>
+				</section>
+				<section>
+          <h2>Ember Data addon that brings XHR benefits to Ember Data</h2>
+        </section>
+				<section>
+          <h2>Ember Data challenges</h2>
+					<aside class="notes">
+            Three pillars of M3
+					</aside>
+        </section>
+				<section>
+          <h2>Performance</h2>
+        </section>
+				<section>
+          <h2>Models</h2>
+          <h2>Payload Processing</h2>
+        </section>
+				<section>
+          <h2>Models</h2>
+						<pre><code data-trim contenteditable>
+/**
+* The model for account.
+*
+* @module Models
+* @class account
+*/
+export default DS.Model.extend(Validations, {
+ /**
+	* Billing parent reference id for the account
+	* Enterprise only
+	*
+	* @property
+	*/
+ billingParentReferenceId: DS.attr('string'),
+ ... 
+});
+					</code></pre>
+				</section>
+				<section>
+          <h2>Payload size</h2>
+        </section>
+				<section>
+          <h2>Initializing</h2>
+        </section>
+				<section>
+          <h2>MegaMorphicModel</h2>
+        </section>
+				<section>
+<pre><code data-trim contenteditable>
+const MegaMorphicModel =  Ember.Object.extend({
+  ...
+})
+</code></pre>
+        </section>
+				<section>
+          <h2>Models (add data)</h2>
+        </section>
+				<section>
+          <h2>Payload Processing</h2>
+					<aside class="notes">
+Much lighter weight normalizing process and buffered caching
+					</aside>
+        </section>
+				<section>
+          <h2>Buffered Caching</h2>
+        </section>
+				<section>
+          <h2>Performance</h2>
+        </section>
+				<section>
+          <h2>Nested Data access</h2>
+        </section>
+				<section>
+					<pre><code data-trim contenteditable>
 {
-  attributes: ['file', 'variables', 'functions'],
-  relationships: ['classes', 'components']
+"urn:li:ugcPost:6541385448718159872": {
+	"accountId": 507468353,
+	"companyId": 17995238,
+	"lastModifiedAt": 1559587824165,
+	"lifecycleState": "PROCESSING",
+	"lifecycleStateInfo": {
+		"com.linkedin.ugc.ProcessingStateInfo": {
+			"assetStatus": "PROCESSING"
+		}
+	},
+	"name": "Sample Video",
+	"shareContent": {
+		"commentary": "Sample Video Intro",
+		"contentEntities": [
+			{
+				"image": {
+					"url": "https://dms.licdn.com/video-thumbs/C4E10AQFMBw-EZHL5FA/fac3e37f94c34d469d60c0322263da29/ads-videocover_540_v2/960x540-00001.jpg"
+				},
+				"landingPageTitle": "LEARN_MORE",
+				"landingPageUrl": "http://linkedin.com/ads/",
+				"recipes": [
+					"VIDEO_ADS_V2"
+				],
+				"title": "My Awesome Headline",
+				"urn": "urn:li:digitalmediaAsset:C4E10AQFMBw-EZHL5FA",
+				"video": {
+					"aspectRatioHeight": 9.0,
+					"aspectRatioWidth": 16.0,
+					"duration": 15083,
+					"url": "https://dms.licdn.com/playback/C4E10AQFMBw-EZHL5FA/517a5ae00bf340b7a57d59f4b19eeae4/ads-mp4_3300_v2/1539653675477-jctfxc?e=1559692800&v=beta&t=XYWqjOpp-C7g6uNje3Xs_TweKQ6X-nRzJvSRnZ_Qkt8"
+				}
+			}
+		],
+		"contentType": "VIDEO"
+	},
+	"urn": "urn:li:ugcPost:6541385448718159872",
+	"visibility": "DARK"
 }
-          </code></pre>
-				</section>
+					
+							</code></pre>
+					<aside class="notes">
+Sponsored Content
+					</aside>
+        </section>
 				<section>
-						<pre><code data-trim contenteditable>
-let user = store.findRecord('user', 'NullVoxPopuli');
+					<pre><code data-trim contenteditable>
+  getSponsorableContentsByUrns(urns) {
+    return this.xhr
+      .fetch(
+        `${API_ENDPOINTS.sponsorableContents}?ids=${encoder.encode(urns)}`,
+        {
+          type: 'GET',
+        },
+        0
+      )
+      .then(({ results = {} }) => Object.keys(results).map(urn => results[urn]));
+							</code></pre>
+        </section>
+				<section>
+					<pre><code data-trim contenteditable>
+{{#each content.shareContent.contentEntities as |entity|}}
+  {{entity.video.url}}
+{{/each}}
+							</code></pre>
+        </section>
+				<section>
+					<pre><code data-trim contenteditable>
+{{#each content.shareContent.contentEntities as |entity|}}
+	{{entity.isNew}}
+  {{entity.video.url}}
+{{/each}}
+							</code></pre>
+        </section>
+				<section>
+          <h2>Performance</h2>
+          <h2>Nested Data access</h2>
+        </section>
+				<section>
+          <h2>Advanced features and DX</h2>
+        </section>
+				<section>
+          <h2>Query Caching</h2>
+					<pre><code data-trim contenteditable>
+store.queryURL('/newsfeed/latest', { cacheKey: 'newsfeed.latest', backgroundReload: true });
 					</code></pre>
         </section>
 				<section>
-						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-
-const { attr, hasMany } = DS;
-
-export default DS.Model.extend({
-  file: attr(),
-  variables: attr(),
-  functions: attr(),
-
-  classes: hasMany('class', { async: false, }),
-  components: hasMany('class', { async: false, }),
-  routingId: computed('id', function() {
-    return `modules/${this.get('id')}`;
-  })
-});
-					</code></pre>-
-					<aside class="notes">
-            Isn't an issue, you can transmit more data, and is actually kinda neat
-					</aside>
-        </section>
-				<section>
-One class per type
-					<aside class="notes">
-            No matter how inconsequential, simple or without further use
-
-					</aside>
-        </section>
-				<section>
-          1 Model
-        </section>
-				<section>
-          100 Model
-        </section>
-				<section>
-          10000 Models
-					<aside class="notes">
-10 0000 Classes
-Explain why deeply nested, lots of projections
-					</aside>
-        </section>
-        <section>
-						<pre><code data-trim contenteditable>
-"id": "1",
-"type": "book"
-"attributes": {
-  "name": "Harry Potter and the Sorcerer's Stone",
-  "author": {
-    "name": "JK Rowling"
-    "location": {
-      "country": "UK"
-      "city": "London"
-    }
-  }
-}
-					</code></pre>-
-					<aside class="notes">
-            You would need a model for every layer
-					</aside>
-        </section>
-				<section>
-          Thousands of classes
-        </section>
-				<section>
-A schema might not be neccessary
-        </section>
-				<section>
-Provided in the api payload
-        </section>
-				<section>
-						<pre><code data-trim contenteditable>
-import DS from 'ember-data';
-import { computed } from '@ember/object';
-
-const { attr, hasMany } = DS;
-
-export default DS.Model.extend({
-  file: attr(),
-  variables: attr(),
-  functions: attr(),
-
-  classes: hasMany('class', { async: false, }),
-  components: hasMany('class', { async: false, }),
-  routingId: computed('id', function() {
-    return `modules/${this.get('id')}`;
-  })
-});
+          <h2>Deco Projections</h2>
+					<pre><code data-trim contenteditable>
 					</code></pre>
-					<aside class="notes">
-            Isn't an issue, you can transmit more data, and is actually kinda neat
-					</aside>
         </section>
 				<section>
-					Ember MegaMorphic Model (ember-m3)
-        </section>
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/m3.png" alt="Meny">
-        </section>
-				<section>
-Separates schema and class info
-        </section>
-				<section>
-All Models have the same backing class 
-						<pre><code data-trim contenteditable>
-let user: MegamorphicModel = store.findRecord('user', 'thorsteinsson');
-let company: MegamorphicModel = store.findRecord('company', 'LinkedIn');
-          </code></pre>
+          <h2>Performance</h2>
+          <h2>Nested Data access</h2>
+					<h2>Advanced features and DX</h2>
 				</section>
 				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/no-model.png" alt="Meny">
-        </section>
-
-				<section>
-          Dynamic Schema
-        </section>
-
-				<section>
-Arbitrarily Nested Models
-        </section>
-        <section>
-						<pre><code data-trim contenteditable>
-"id": "1",
-"type": "book"
-"attributes": {
-  "name": "Harry Potter and the Sorcerer's Stone",
-  "author": {
-    "name": "JK Rowling"
-    "location": {
-      "country": "UK"
-      "city": "London"
-    }
-  }
-}
-					</code></pre>-
-					<aside class="notes">
-            You would need a model for every layer
-					</aside>
-        </section>
-				<section>
-          Template only component
-          <br>
-          <img style="border:0px; box-shadow:none;"" src="./images/template-only.png" alt="Meny">
-        </section>
-
-				<section>
-Trade offs
-					<aside class="notes">
-            Perfect example of what we need to happen
-            Bring back into Ember Data
-					</aside>
-        </section>
-
-				<section>
-          <h3>Performance at scale</h3>
-          <div class="fragment">
-            <h3>Advanced Data fetching, caching and mutating</h3>
-          </div>
-        </section>
-
-				<section>
-          Data loading patterns
+          <h3>How does m3 fit in the ecosystem</h3>
 				</section>
 				<section>
-						<pre><code data-trim contenteditable>
-store.findRecord('user', 'bryancrotaz')
-          </code></pre>
-        </section>
-				<section>
-						<pre><code data-trim contenteditable>
-store.findAll('user')
-          </code></pre>
-        </section>
-
-				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/storefront.png" alt="Meny">
-        </section>
-				<section>
-          Default FindAll
-        <pre><code data-trim contenteditable>
-export default Route.extend({
-  hasLoadedAll: false,
-
-  model() {
-    return this.store.findAll('post', { reload: !this.hasLoadedAll });
-  },
-
-  afterModel() {
-    this.hasLoadedAll = true;
-  }
-});
-            
-                      </code></pre>
-                      <aside class="notes">
-                      </aside>
-                  </section>
-				<section>
-          With StoreFront
-        <pre><code data-trim contenteditable>
-
-default Route.extend({
-  beforeModel() {
-    return this.store.loadRecords('post');
-  },
-
-  model() {
-    return this.store.peekAll('post');
-  }
-});
-
-                      </code></pre>
-                  </section>
-				<section>
-          Query caching
-					<aside class="notes">
-            Both m3 and storefront  
-					</aside>
+          <h3>m3 is an ember data addon</h3>
 				</section>
 				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/observer-data.png" alt="Meny">
-        </section>
-
+          <h3>Supports interop with ember data</h3>
+				</section>
 				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/dan.png" alt="Meny">
-					<aside class="notes">
-					</aside>
-        </section>
-
+          <h3>Open source</h3>
+				</section>
 				<section>
-				  2019
-					<aside class="notes">
-            Okay great we have all of these addons, what do we do??
-            So all of these addons are great
-					</aside>
-        </section>
-
+					<h3>https://github.com/hjdivad/ember-m3</h3>
+				</section>
 				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/dan-2.png" alt="Meny">
-        </section>
-
+          <h3>Customized and prepackaged for pemberly-api</h3>
+				</section>
 				<section>
-          The curse of the large standard library
-					<aside class="notes">
-					</aside>
-        </section>
-
+					<h3>https://git.corp.linkedin.com:1367/plugins/gitiles/multiproducts/ember-cli-pemberly-m3</h3>
+				</section>
 				<section>
-          <div style="height:900px">
-          <img style="border:0px; box-shadow:none;"" src="./images/monolith.png" alt="Meny">
-          </div>
-					<aside class="notes">
-          </aside>
-        </section>
-
+					<h3>ember-cli-pemberly-m3   ->   ember-m3  ->  ember-data</h3>
+				</section>
 				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/observer-data.png" alt="Meny">
-					<aside class="notes">
-            These addons are great
-            However if you look under the surface, it gets really gnarly real fast
-            Lots of private API usage
-            Things are hard to do
-            And even when you do do them, you get model fragments
-          </aside>
-        </section>
-
+					<h3>Over time, m3 absorbed by ember-data</h3>
+				</section>
 				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/fragment.png" alt="Meny">
-        </section>
-        <section>
-          <h3>Hard to develop addons</h3>
-          <div class="fragment">
-            <h3>Hard to integrate addons into core</h3>
-          </div>
-          <div class="fragment">
-            <h3>Hard to add new features</h3>
-          </div>
-					<aside class="notes">
-            Ember Data team is not special
-					</aside>
-        </section>
-
+					<h3>ember-cli-pemberly-m3  ->  ember-data</h3>
+				</section>
 				<section>
-          <h2>Every Ember Developer is a potential Addon Author</h2>
-					<aside class="notes">
-            Strength of the community
-					</aside>
-        </section>
-
-        <section>
-          2019
-        </section>
-
+					<h2>M3</h2>
+				</section>
 				<section>
-          <h3>All of the addons</h3>
-          <div class="fragment">
-            <h3>No Private Apis</h3>
-          </div>
-        </section>
-
+					<h2>Works</h2>
+				</section>
 				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/rfcs.png" alt="Meny">
-        </section>
-
+					<h2>Fast</h2>
+				</section>
 				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/core.png" alt="Meny">
-        </section>
-
+					<h2>Documented</h2>
+				</section>
 				<section>
-          <img style="border:0px; box-shadow:none;"" src="./images/core-2.png" alt="Meny">
-        </section>
-
+					<h2>go/maap</h2>
+				</section>
 				<section>
-          We are recruiting!
-        </section>
-
+					<h2>Production ready</h2>
+				</section>
+				<section>
+					<h2>Future plans</h2>
+				</section>
+				<section>
+					<h2>DX improvements</h2>
+				</section>
+				<section>
+					<h2>m3 functionality in ember data</h2>
+				</section>
+				<section>
+					<h2>GraphQL support</h2>
+				</section>
 				<section>
           <h2>
           Thanks!
