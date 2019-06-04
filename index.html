@@ -400,6 +400,12 @@ const MegaMorphicModel =  Ember.Object.extend({
 </code></pre>
         </section>
 				<section>
+<pre><code data-trim contenteditable>
+	let entity = await store.findRecord('com.linkedin.campaignmanager.content.CmSponsorableContent', 'urn:li:1');
+	entity.get('someProperty')
+</code></pre>
+        </section>
+				<section>
           <h2>Payload Processing</h2>
 					<aside class="notes">
 						Other Performance improvements
@@ -410,7 +416,8 @@ Much lighter weight normalizing process and buffered caching
           <h2>Buffered Caching</h2>
         </section>
 				<section>
-          <h2>Performance</h2>
+          <h2>M3 goals</h2>
+          <h3>Performance</h3>
         </section>
 				<section>
           <h2>Nested Data access</h2>
@@ -458,7 +465,7 @@ Much lighter weight normalizing process and buffered caching
 }
 							</code></pre>
 					<aside class="notes">
-Sponsored Content
+Sponsorable Content
 					</aside>
         </section>
 				<section>
@@ -474,25 +481,32 @@ Sponsored Content
       )
       .then(({ results = {} }) => Object.keys(results).map(urn => results[urn]));
 							</code></pre>
-        </section>
+				</section>
+				<section>
+						<pre><code data-trim contenteditable>
+let record = await store.findRecord('com.linkedin.campaignmanager.content.CmSponsorableContent', 
+  'urn:li:ugcPost:6541385448718159872')
+							</code></pre>
+				</section>
 				<section>
 					<pre><code data-trim contenteditable>
-{{#each content.shareContent.contentEntities as |entity|}}
+{{#each record.content.shareContent.contentEntities as |entity|}}
   {{entity.video.url}}
 {{/each}}
 							</code></pre>
         </section>
 				<section>
 					<pre><code data-trim contenteditable>
-{{#each content.shareContent.contentEntities as |entity|}}
-	{{entity.isNew}}
+{{#each record.content.shareContent.contentEntities as |entity|}}
+  {{entity.isNew}}
   {{entity.video.url}}
 {{/each}}
 							</code></pre>
         </section>
 				<section>
-          <h2>Performance</h2>
-          <h2>Nested Data access</h2>
+          <h2>M3 goals</h2>
+          <h3>Performance</h3>
+          <h3>Nested Data access</h3>
         </section>
 				<section>
           <h2>Advanced features and DX</h2>
@@ -507,9 +521,10 @@ store.queryURL('/newsfeed/latest', { cacheKey: 'newsfeed.latest', backgroundRelo
           <h2>Deco Projections</h2>
         </section>
 				<section>
-          <h2>Performance</h2>
-          <h2>Nested Data access</h2>
-					<h2>Advanced features and DX</h2>
+						<h2>M3 goals</h2>
+						<h3>Performance</h3>
+						<h3>Nested Data access</h3>
+					<h3>Advanced features and DX</h3>
 				</section>
 				<section>
           <h2>M3</h2>
