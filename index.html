@@ -53,26 +53,34 @@
 					<div class="right">
 						<h3 style="margin-right: 130px">Igor Terzic</h3>
 					</div>
+										<aside class="notes">
+							- Client web frameworks
+							- ember data and ember.js framework core teams
+							- Ember since 2012
+							- LinkedIn since November
+						</aside>
+
 				</section>
 				<section>
-					<h2>Good morning!</h2>
-					<aside class="notes">
-            - Client web frameworks
-            - Ember since 2012
-            - LinkedIn since November
-					</aside>
+						<h2>M3</h2>
+					<div class="fragment">
+					<h2>Frontend Data Handling in Ember</h2>
+					</div>
 				</section>
 				<section>
-          <h2>Frontend Data Handling in Ember</h2>
-          <h2>M3</h2>
+					<h2>Frontend Data Handling in Ember</h2>
 				</section>
 				<section>
           <h2>Raw Ajax</h2>
 				</section>
 				<section>
-          <h2>jQuery</h2>
+						<h2>jQuery</h2>
+					<div class="fragment">
           <h2>fetch</h2>
-          <h2>xhr</h2>
+					</div>
+					<div class="fragment">
+          <h2>xhr service</h2>
+					</div>
 				</section>
         <section>
 						<pre><code data-trim contenteditable>
@@ -115,14 +123,6 @@ yield this.xhr.post(`${API_ENDPOINTS.lisaAccounts}/${accountId}`, {
 */
 export default DS.Model.extend(Validations, {
  /**
-	* i18n service
-	*
-	* @property i18n
-	* @private
-	*/
- i18n: inject(),
-
- /**
 	* Billing parent reference id for the account
 	* Enterprise only
 	*
@@ -156,12 +156,19 @@ export default DS.Model.extend(Validations, {
   * @public
   */
   openCampaignGroupEditModal: task(function*(id) {
-		const campaignGroupModel = yield this.store.findRecord('campaignGroup', id);
-		this.set('campaignGroupToModify', campaignGroupModel);
-		this.set('isEditCampaignGroupModal', true);
-		this.set('isCampaignGroupAddEditModalOpen', true);
+    const campaignGroupModel = yield this.store.findRecord('campaignGroup', id);
+    this.set('campaignGroupToModify', campaignGroupModel);
+    this.set('isEditCampaignGroupModal', true);
+    this.set('isCampaignGroupAddEditModalOpen', true);
   }).drop(),	
 					</code></pre>
+				</section>
+				<section>
+          <h2>Tradeoffs</h2>
+					<aside class="notes">
+						campaign manager uses both
+						what we can do to make the tradeoffs not as bad
+					</aside>
 				</section>
 				<section>
           <h2>Ember Data</h2>
@@ -169,7 +176,7 @@ export default DS.Model.extend(Validations, {
 				<section>
 					<h2>Caching</h2>
 						<pre><code data-trim contenteditable>
-yield this.store.findRecord('campaignGroup', id);
+let campaignGroup = await this.store.findRecord('campaignGroup', id);
 					</code></pre>
 				</section>
 				<section>
@@ -218,6 +225,9 @@ export default DS.Model.extend(Validations, {
 				<section>
           <h2>Conventional</h2>
           <h2>Adapter/Serializer</h2>
+					<aside class="notes">
+						All of the api logic in one place
+					</aside>
 				</section>
 				<section>
           <h2>Common functionality and support</h2>
@@ -232,9 +242,6 @@ export default DS.Model.extend(Validations, {
           <h3>Schemas</h3>
           <h3>Conventional</h3>
           <h3>Common functionality and support</h3>
-					<aside class="notes">
-						Both from the community and internally
-					</aside>
 				</section>
 				<section>
           <h2>Raw Ajax</h2>
@@ -244,29 +251,71 @@ export default DS.Model.extend(Validations, {
 				</section>
 				<section>
 						<pre><code data-trim contenteditable>
-yield this.xhr.post(`${API_ENDPOINTS.lisaAccounts}/${accountId}`, {
-	headers: { 'x-restli-method': 'partial_update' },
-	data: JSON.stringify(postData),
-});
+const accountInfo = await this.xhr.fetch(`${API_ENDPOINTS.lisaAccounts}/${accountId}`);
 					</code></pre>
 				</section>
 				<section>
           <h2>Fast</h2>
+					<aside class="notes">
+Tradeoff as the app grows, and lots of custom code etc
+					</aside>
 				</section>
 				<section>
           <h2>Easy to access nested properties</h2>
+					<aside class="notes">
+Look at the network tab, if there access it, if not go bother the api team
+					</aside>
 				</section>
 				<section>
           <h2>Flexible</h2>
 				</section>
 				<section>
+						<h2>Raw Ajax</h2>
+						<h3>Straightforward</h3>
+						<h3>Fast</h3>
+						<h3>Easy to access nested properties</h3>
+						<h3>Flexible</h3>
+					</section>
+					<section>
+							<h2>Schemas</h2>
+								<pre><code data-trim contenteditable>
+		/**
+		* The model for account.
+		*
+		* @module Models
+		* @class account
+		*/
+		export default DS.Model.extend(Validations, {
+		 /**
+			* Billing parent reference id for the account
+			* Enterprise only
+			*
+			* @property
+			*/
+		 billingParentReferenceId: DS.attr('string'),
+		 ... 
+		});
+							</code></pre>
+
+					<aside class="notes">
+						Mismatch given that LI already has PDSCs
+						</section>
+				<section>
+          <h2>Campaign manager uses both</h2>
+					<aside class="notes">
+A perfectly sensible choice
+A use case mmismatch between ED and some of LIs use cases
+					</aside>
+				</section>
+
+				<section>
           <h2>M3</h2>
 				</section>
 				<section>
-          <h2>Ember Data addon that brings XHR benefits to Ember Data</h2>
+          <p>Ember Data addon that brings XHR benefits to Ember Data</p>
         </section>
 				<section>
-          <h2>Ember Data challenges</h2>
+          <h3>Ember Data challenges</h3>
 					<aside class="notes">
             Three pillars of M3
 					</aside>
@@ -276,7 +325,6 @@ yield this.xhr.post(`${API_ENDPOINTS.lisaAccounts}/${accountId}`, {
         </section>
 				<section>
           <h2>Models</h2>
-          <h2>Payload Processing</h2>
         </section>
 				<section>
           <h2>Models</h2>
@@ -300,13 +348,49 @@ export default DS.Model.extend(Validations, {
 					</code></pre>
 				</section>
 				<section>
-          <h2>Payload size</h2>
+					<h2>Payload size</h2>
+					<div class="fragment">
+						65kb
+					</div>
         </section>
 				<section>
-          <h2>Initializing</h2>
+          <h2>Initializing Time</h2>
         </section>
 				<section>
-          <h2>MegaMorphicModel</h2>
+					<h2>Payload size</h2>
+					<div class="fragment">
+						65kb
+					</div>
+        </section>
+				<section>
+          <h2>Models</h2>
+						<pre><code data-trim contenteditable>
+/**
+* The model for account.
+*
+* @module Models
+* @class account
+*/
+export default DS.Model.extend(Validations, {
+ /**
+	* Billing parent reference id for the account
+	* Enterprise only
+	*
+	* @property
+	*/
+ billingParentReferenceId: DS.attr('string'),
+ ... 
+});
+					</code></pre>
+					<aside class="notes">
+						For not that much benefit, to be able to access the payload you already have with xhr
+					</aside>
+				</section>
+				<section>
+          <h2>Initializing Time</h2>
+        </section>
+				<section>
+          <p>MegaMorphicModel</p>
         </section>
 				<section>
 <pre><code data-trim contenteditable>
@@ -316,11 +400,9 @@ const MegaMorphicModel =  Ember.Object.extend({
 </code></pre>
         </section>
 				<section>
-          <h2>Models (add data)</h2>
-        </section>
-				<section>
           <h2>Payload Processing</h2>
 					<aside class="notes">
+						Other Performance improvements
 Much lighter weight normalizing process and buffered caching
 					</aside>
         </section>
@@ -374,7 +456,6 @@ Much lighter weight normalizing process and buffered caching
 	"urn": "urn:li:ugcPost:6541385448718159872",
 	"visibility": "DARK"
 }
-					
 							</code></pre>
 					<aside class="notes">
 Sponsored Content
@@ -424,8 +505,6 @@ store.queryURL('/newsfeed/latest', { cacheKey: 'newsfeed.latest', backgroundRelo
         </section>
 				<section>
           <h2>Deco Projections</h2>
-					<pre><code data-trim contenteditable>
-					</code></pre>
         </section>
 				<section>
           <h2>Performance</h2>
@@ -433,10 +512,13 @@ store.queryURL('/newsfeed/latest', { cacheKey: 'newsfeed.latest', backgroundRelo
 					<h2>Advanced features and DX</h2>
 				</section>
 				<section>
-          <h3>How does m3 fit in the ecosystem</h3>
+          <h2>M3</h2>
 				</section>
 				<section>
-          <h3>m3 is an ember data addon</h3>
+          <p>How does m3 fit in the ecosystem</p>
+				</section>
+				<section>
+          <h3>Ember Data Addon</h3>
 				</section>
 				<section>
           <h3>Supports interop with ember data</h3>
@@ -454,19 +536,19 @@ store.queryURL('/newsfeed/latest', { cacheKey: 'newsfeed.latest', backgroundRelo
 					<h3>https://git.corp.linkedin.com:1367/plugins/gitiles/multiproducts/ember-cli-pemberly-m3</h3>
 				</section>
 				<section>
-					<h3>ember-cli-pemberly-m3   ->   ember-m3  ->  ember-data</h3>
+					<h2>ember-data -> ember-m3 -> ember-cli-pemberly-m3</h3>
 				</section>
 				<section>
-					<h3>Over time, m3 absorbed by ember-data</h3>
+					<h3>ember-data -> ember-cli-pemberly-m3</h3>
 				</section>
 				<section>
-					<h3>ember-cli-pemberly-m3  ->  ember-data</h3>
-				</section>
-				<section>
-					<h2>M3</h2>
+					<h2>Current State</h2>
 				</section>
 				<section>
 					<h2>Works</h2>
+					<aside class="notes">
+						Fully ramped in voyager
+					</aside>
 				</section>
 				<section>
 					<h2>Fast</h2>
@@ -475,7 +557,10 @@ store.queryURL('/newsfeed/latest', { cacheKey: 'newsfeed.latest', backgroundRelo
 					<h2>Documented</h2>
 				</section>
 				<section>
-					<h2>go/maap</h2>
+					<h2>Supported</h2>
+				</section>
+				<section>
+					<h2>go/pemberly/web</h2>
 				</section>
 				<section>
 					<h2>Production ready</h2>
@@ -485,6 +570,9 @@ store.queryURL('/newsfeed/latest', { cacheKey: 'newsfeed.latest', backgroundRelo
 				</section>
 				<section>
 					<h2>DX improvements</h2>
+					<aside class="notes">
+						Debugging, nicer Restli projections etc.
+					</aside>
 				</section>
 				<section>
 					<h2>m3 functionality in ember data</h2>
@@ -496,9 +584,6 @@ store.queryURL('/newsfeed/latest', { cacheKey: 'newsfeed.latest', backgroundRelo
           <h2>
           Thanks!
           </h2>
-          <h3>@terzicigor</h3>
-					<aside class="notes">
-            Thanks for not falling asleep
 					</aside>
 
         </section>
