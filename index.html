@@ -261,10 +261,17 @@ Tradeoff as the app grows, and lots of custom code etc
 					</aside>
 				</section>
 				<section>
-          <h2>Easy to access nested properties</h2>
+          <h2>Easy to access payload</h2>
 					<aside class="notes">
 Look at the network tab, if there access it, if not go bother the api team
 					</aside>
+				</section>
+				<section>
+						<pre><code data-trim contenteditable>
+let request = await this.xhr.fetch(`${API_ENDPOINTS.lisaAccounts}/${accountId}`);
+let accountInfo = request.json();
+console.log(accountInfo.detailedInfo._someProperty);
+					</code></pre>
 				</section>
 				<section>
           <h2>Flexible</h2>
@@ -357,12 +364,6 @@ export default DS.Model.extend(Validations, {
           <h2>Initializing Time</h2>
         </section>
 				<section>
-					<h2>Payload size</h2>
-					<div class="fragment">
-						65kb
-					</div>
-        </section>
-				<section>
           <h2>Models</h2>
 						<pre><code data-trim contenteditable>
 /**
@@ -387,9 +388,6 @@ export default DS.Model.extend(Validations, {
 					</aside>
 				</section>
 				<section>
-          <h2>Initializing Time</h2>
-        </section>
-				<section>
           <p>MegaMorphicModel</p>
         </section>
 				<section>
@@ -402,7 +400,7 @@ const MegaMorphicModel =  Ember.Object.extend({
 				<section>
 <pre><code data-trim contenteditable>
 	let entity = await store.findRecord('com.linkedin.campaignmanager.content.CmSponsorableContent', 'urn:li:1');
-	entity.get('someProperty')
+	entity.get('companyId')
 </code></pre>
         </section>
 				<section>
@@ -468,36 +466,15 @@ Much lighter weight normalizing process and buffered caching
 Sponsorable Content
 					</aside>
         </section>
+						<section>
+								<pre><code data-trim contenteditable>
+let record = await store.findRecord('com.linkedin.campaignmanager.content.CmSponsorableContent', 'urn:li:1');
+record.get('shareContent.contentEntities.image.url')
+								</code></pre>
+												</section>
 				<section>
 					<pre><code data-trim contenteditable>
-  getSponsorableContentsByUrns(urns) {
-    return this.xhr
-      .fetch(
-        `${API_ENDPOINTS.sponsorableContents}?ids=${encoder.encode(urns)}`,
-        {
-          type: 'GET',
-        },
-        0
-      )
-      .then(({ results = {} }) => Object.keys(results).map(urn => results[urn]));
-							</code></pre>
-				</section>
-				<section>
-						<pre><code data-trim contenteditable>
-let record = await store.findRecord('com.linkedin.campaignmanager.content.CmSponsorableContent', 
-  'urn:li:ugcPost:6541385448718159872')
-							</code></pre>
-				</section>
-				<section>
-					<pre><code data-trim contenteditable>
-{{#each record.content.shareContent.contentEntities as |entity|}}
-  {{entity.video.url}}
-{{/each}}
-							</code></pre>
-        </section>
-				<section>
-					<pre><code data-trim contenteditable>
-{{#each record.content.shareContent.contentEntities as |entity|}}
+{{#each record.shareContent.contentEntities as |entity|}}
   {{entity.isNew}}
   {{entity.video.url}}
 {{/each}}
@@ -551,10 +528,13 @@ store.queryURL('/newsfeed/latest', { cacheKey: 'newsfeed.latest', backgroundRelo
 					<h3>https://git.corp.linkedin.com:1367/plugins/gitiles/multiproducts/ember-cli-pemberly-m3</h3>
 				</section>
 				<section>
-					<h2>ember-data -> ember-m3 -> ember-cli-pemberly-m3</h3>
+					<h3>ember-data -> ember-m3 -> ember-cli-pemberly-m3</h3>
 				</section>
 				<section>
 					<h3>ember-data -> ember-cli-pemberly-m3</h3>
+					<aside class="notes">
+						Li happens to exercise these features heavily, but is by no means the only one
+						</aside>
 				</section>
 				<section>
 					<h2>Current State</h2>
