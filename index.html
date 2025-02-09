@@ -22,6 +22,7 @@
 				<p>Live interactive 3D streaming game show</p>
 				<p>@Taiyaki Studios</p>
 			</section>
+
 			<section>
 				<p>Company and project background</p>
 				<p>Goals</p>
@@ -31,10 +32,17 @@
 				<p>Launch</p>
 				<p>Post launch & iteration</p>
 			</section>
+
 			<section>
 				<p>Startup thesis:</p>
 				<p>Game engines + motion capture have made 3D content creation much easier</p>
 				<p>Enable people to create compelling content</p>
+			</section>
+			<section>
+				<video height="700" controls>
+					<source src="./demo.mp4" type="video/mp4">
+				  </video>
+				  
 			</section>
 
 			<section>
@@ -48,13 +56,14 @@
 				<p>Project goals:</p>
 				<p>Validate that we can build and run a high production value streaming show, going 0 -> 1</p>
 				<p>Validate the thesis that a streaming show based off of TV gaming shows leads to viewers</p>
-			</section>
+			</section>	
 
 			<section>
 				<p>High level design</p>
 				<p>Game show, Trivia, other games</p>
 				<p>Validation</p>
 			</section>
+
 			<section>
 				<p>Validate that we can build and run a high production value streaming show with new IP, going 0 -> 1</p>
 				<p>Validate the thesis that a streaming show based off of TV gaming shows leads to viewers</p>
@@ -83,6 +92,87 @@
 				<p>3D Test streaming environment, test stream tech| Iterate on 3D environment, 3d models, animations | Polish, sound design, music videos, etc.</p>
 				<p>Creative: Base back story, initial games| Iterate on story lines, music production | Trivia Question design</p>
 				<p>Operational: ----- | Testing, Promotion setup | </p>
+			</section>
+			<section>
+				<p>Decision time: We have an existing proof of concept, that will be developed further, do we develop together, or separately</p>
+				<p>Tradeoffs</p>
+			</section>
+			<section>
+				<p>How did the whole thing work: Technical diagram:</p>
+				<p>Performer in a motion capture suit in front of multiple tvs:</p>
+				<p>Unreal Engine rendering connecting to a cloud API and local settings + data</p>
+				<p>Server listening to TikTok/Twitch messages and events</p>
+				<p>Cloud backend on amplify</p>
+				<p>Operator</p>
+			</section>
+			<section>
+				<p>Decision time: what to keep in Unreal Engine and what to move out into code</p>
+				<p>Tradeoffs</p>
+				<p>Kept things mostly in UE</p>
+			</section>
+
+			<section>
+				<p>Goals for the structure of Unreal Engine:</p>
+				<p>Make it as easy as possible for artists and unreal devs to add content, and modify things, daily while safe as possible</p>
+				<p>Make runtime both on rails and easy to change live</p>
+				<p>Make everything easily changeabla, like game size, etc.</p>
+				<p>Robustness</p>
+			</section>
+
+			<section>
+				<p>Isolated server data handling and graphql</p>
+				<p>Encapsulated game data, player data, etc</p>
+				<p>A core state machine:</p>
+				<p>State machine code deals with core game logic:</p>
+				<p>Within each state, deals with camera setup, animation triggering, all of content:</p>
+			</section>
+
+			<section>
+				<p>Example state machine?</p>
+			</section>
+
+			<section>
+				<p>Core state machine in </p>
+				<p>Tradeoffs</p>
+				<p>Kept things mostly in UE</p>
+			</section>
+			<section>
+				<p>Testing and robustness</p>
+				<p>Manual testing</p>
+				<p>Plan and practice for failures</p>
+				<p>It's a live show, practice</p>
+				<p>In universe narrative explanations</p>
+			</section>
+			<section>
+				<p>Analytics:</p>
+				<p>Platform analytics</p>
+				<p>Video capture</p>
+				<p>Mixpanel</p>
+			</section>
+			<section>
+				<p>Launch:</p>
+				<p>Promotion worked well, hundreds of viewers who stayed for the whole show</p>
+				<p>Sharp dropoff, ending at ~20 ACV</p>
+			</section>
+			<section>
+				<p>Iteration:</p>
+				<p>Noticed TikTok</p>
+			</section>
+			<section>
+				<p>Configurable project super helpful</p>
+			</section>
+			<section>
+				<p>Sunset Twitch, TikTok only dev</p>
+			</section>
+			<section>
+				<p>Peaked at 1000+ viewers</p>
+			</section>
+			<section>
+				<p>Outcome:</p>
+				<p>Validated but</p>
+			</section>
+			<section>
+				<p>Learnings?</p>
 			</section>
 
 			<section>
