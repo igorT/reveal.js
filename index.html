@@ -10,6 +10,26 @@
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/black.css">
+	<style type="text/css">
+		.left {
+			left:-8.33%;
+			text-align: left;
+			float: left;
+			width:50%;
+			z-index:-10;
+		  }
+		  
+		  .right {
+			left:31.25%;
+			bottom: 75px;
+			float: right;
+			text-align: right;
+			z-index:-10;
+			width:50%;
+		  }
+
+	</style>
+
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -21,6 +41,10 @@
 			<section>
 				<p>Live interactive 3D streaming game show</p>
 				<p>@Taiyaki Studios</p>
+				<div class="right">
+					<h4 style="margin-right: 130px">Igor Terzic</h4>
+				</div>
+
 			</section>
 
 			<section>
@@ -32,7 +56,7 @@
 					<li class="fragment">Goals</li>
 					<li class="fragment">Team</li>
 					<li class="fragment">Timelines & plan</li>
-					<li class="fragment">Tech setup</li>
+					<li class="fragment">Technical architecture</li>
 					<li class="fragment">Launch</li>
 					<li class="fragment">Post launch & iteration</li>
 					<li class="fragment">Learnings</li>
@@ -41,31 +65,72 @@
 			</section>
 
 			<section>
+				<h2>Demo</h2>
+			</section>
+			<section>
 				<video height="700" controls>
 					<source src="./demo.mp4" type="video/mp4">
 				  </video>
-				  
-			</section>
-
-
-			<section>
-				<p>Startup thesis:</p>
-				<p>Game engines + motion capture have made 3D content creation much easier</p>
-				<p>Enable people to create compelling content</p>
 			</section>
 
 			<section>
-				<p>Project thesis:</p>
-				<p>Lots of people stream using simple 2D or 3D characters online</p>
-				<p>A much higher production value, more interactive content would attract more fans</p>
-				<p>Start in-house, directly working with talent, then scale out later</p>
+				<h2>Company and project background</h2>
 			</section>
 
 			<section>
-				<p>Project goals:</p>
-				<p>Validate that we can build and run a high production value streaming show, going 0 -> 1</p>
-				<p>Validate the thesis that a streaming show based off of TV gaming shows leads to viewers</p>
+				<h2>Startup thesis:</h2>
+				<p class="fragment">Game engines + motion capture have made 3D content creation much easier</p>
+				<p class="fragment">Enable people to create compelling content</p>
+			</section>
+
+			<section>
+				<h2>Project thesis:</h2>
+				<ul>
+					<li class="fragment">Lots of people stream using simple 2D or 3D characters online</li>
+				</ul>
+			</section>
+			<section>
+				<img src="./vtuber1.png">
+			</section>
+			<section>
+				<img src="./vtuber2.png">
+			</section>
+			<section>
+				<h2>Project thesis:</h2>
+				<ul>
+					<li class="fragment">Lots of people stream using simple 2D or 3D characters online</li>
+					<li class="fragment">Company acquired an existing 3D VTuber team</li>
+					<li class="fragment">A much higher production value, more interactive content would attract more fans</li>
+					<li class="fragment">Start in-house, directly working with talent, then scale out later</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Goals</h2>
+			</section>
+
+			<section>
+				<h2>Goals</h2>
+				<ul>
+					<li class="fragment">Validate that we can build and run a high production value streaming show, going 0 -> 1</li>
+					<li class="fragment">Validate that we can launch a new character completely in house</li>
+					<li class="fragment">Validate the thesis that a streaming show based off of TV gaming shows leads to viewers</li>
+				</ul>
 			</section>	
+			<!-- at some point talk about deciding how to interfac with the existing team, whether to do it together or how?-->
+			<section>
+				<h2>Goals</h2>
+				<ul>
+					<li class="fragment">Validate that we can build and run a high production value streaming show, going 0 -> 1</li>
+					<li class="fragment">Validate that we can launch a new character completely in house</li>
+					<li class="fragment">Validate the thesis that a streaming show based off of TV gaming shows leads to viewers</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Targets</h2>
+				<ul>
+					<li class="fragment">300 average concurrent viewers //after x time passed?</li>
+				</ul>
+			</section>
 
 			<section>
 				<p>High level design</p>
