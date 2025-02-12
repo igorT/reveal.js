@@ -38,44 +38,17 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<p>Live interactive 3D streaming game show</p>
+				<p>Live interactive 3D streaming Trivia game show</p>
 				<p>@Taiyaki Studios</p>
 				<div class="right">
 					<h4 style="margin-right: 130px">Igor Terzic</h4>
 				</div>
 			</section>
-			<section>
-				<h2>
-					Plan for today
-				</h2>
-				<ul>
-					<li class="fragment">Bacgkround and context</li>
-					<li class="fragment">Technical details</li>
-					<li class="fragment">Launch & results</li>
-				</ul>
-			</section>
-
-			<section>
-				<h2>
-					Plan for today
-				</h2>
-				<ul>
-					<li class="fragment">Company and project background</li>
-					<li class="fragment">Goals</li>
-					<li class="fragment">Resources</li>
-					<li class="fragment">Timelines & plan</li>
-					<li class="fragment">Technical architecture</li>
-					<li class="fragment">Launch</li>
-					<li class="fragment">Post launch & iteration</li>
-					<li class="fragment">Learnings</li>
-					<li class="fragment">Questions</li>
-					<li class="fragment">Appendix</li>
-				</ul>
-			</section>
 
 			<section>
 				<h2>Demo</h2>
 			</section>
+
 			<section>
 				<video height="700" controls>
 					<source src="./demo.mp4" type="video/mp4">
@@ -83,18 +56,24 @@
 			</section>
 
 			<section>
-				<h2>Company and project background</h2>
+				<h2>Team:</h2>
+				<ul>
+					<li>Me - cofounder, team lead</li>
+					<li>3D Modeler with some Unreal Engine experience</li>
+					<li>Motion capture technician</li>
+					<li>Performer</li>
+					<li>Software dev, part time</li>
+					<li>Cofounder with software experience, part time</li>
+					<li>Contractors</li>
+				</ul>
 			</section>
 
 			<section>
 				<h2>Startup thesis:</h2>
-				<p class="fragment">Game engines + motion capture have made 3D content creation much easier</p>
-				<p class="fragment">Enable people to create compelling content</p>
-			</section>
-			<section>
-				<h2>Startup state:</h2>
 				<ul>
-					<li class="fragment">Pivoted to VTubing</li>
+					<li class="fragment">Game engines + motion capture have made 3D content creation much easier</li>
+					<li class="fragment">Enable people to create compelling content</li>
+					<li class="fragment">VTubing is a good way to get there</li>
 				</ul>
 			</section>
 			<section>
@@ -107,14 +86,16 @@
 			<section>
 				<h2>Startup state:</h2>
 				<ul>
-					<li class="fragment">Pivoted to VTubing</li>
 					<li class="fragment">Acquihired a 3D VTuber team</li>
-					<li class="fragment">Had an existing relationship with a performer who had a 3D character</li>
+					<li class="fragment">Had an existing team which I led + a performer partner</li>
+					<aside class="notes">
+						Need to decide whether to invest all resources behind them or parallelize and scale
+					</aside>
 				</ul>
 			</section>
 			<section>
 				<h2>Project:</h2>
-				<h3>Launch a high production value interactive virtual show</h3>
+				<h3>Launch a streaming Trivia game show</h3>
 			</section>
 			<section>
 				<h2>Project thesis:</h2>
@@ -133,19 +114,15 @@
 			<section>
 				<h2>Project Goals</h2>
 				<ul>
-					<li class="fragment">Decisevely determine whether to continue investing in the talent
-						partnership
-					</li>
+					<li class="fragment">Decide whether to scale more characters or solely invest in the acquired team, fast</li>
 					<li class="fragment">Validate that a high production value interactive stream can attract
 						viewers
 					</li>
 					<li class="fragment">Validate that we can build it, going 0 -> 1</li>
-					<li class="fragment">Validate that we can launch a new character completely in house</li>
 					<li class="fragment">Validate our talent scouting and that our talent partner is a good
 						streamer
 					</li>
 					<li class="fragment">Honor the relationship with our talent partner</li>
-					<li class="fragment">Be fast</li>
 				</ul>
 			</section>
 			<section>
@@ -160,7 +137,7 @@
 			<section>
 				<h2>Targets</h2>
 				<ul>
-					<li class="fragment">300 average concurrent viewers //after x time passed?</li>
+					<li class="fragment">300 average concurrent viewers after a month</li>
 				</ul>
 			</section>
 
@@ -215,8 +192,13 @@
 				<h2>Existing work:</h2>
 				<ul>
 					<li>Acquired tech: initial proof of concept of streaming interactive game capturing Twitch/TikTok events</li>
-					<li>High quality 3D model, motion capture setup, </li>
+					<li>High quality 3D model, motion capture setup</li>
 				</ul>
+			</section>
+			<section>
+				<p>Decision time: We have an existing proof of concept, that will be developed further, do we
+					develop
+					together, or separately</p>
 			</section>
 
 			<section>
@@ -236,11 +218,6 @@ Restate where we are
 
 
 			<section>
-				<p>Decision time: We have an existing proof of concept, that will be developed further, do we
-					develop
-					together, or separately</p>
-			</section>
-			<section>
 				<h2>Technical design</h2>
 			</section>
 			<section>
@@ -249,12 +226,11 @@ Restate where we are
 			<section>
 				<img height="650"  src="./software.png">
 			</section>
-
 			<section>
 				<p>Decision time: what to keep in Unreal Engine and what to move out into code</p>
 			</section>
 			<section>
-				<img height="650"  src="./blueprint	.png">
+				<img height="650"  src="./blueprint.png">
 			</section>
 			<section>
 				<h2>Goals for the structure of Unreal Engine:</h2>
@@ -262,8 +238,7 @@ Restate where we are
 					<li class="fragment">Make it as easy as possible for artists and unreal devs to add content, and modify things,
 						daily
 						while safe as possible</li>
-					<li class="fragment">Make runtime both on rails and easy to change live</li>
-					<li class="fragment">Make everything easily changeabla, like game size, etc.</li>
+					<li class="fragment">Make the runtime easy to change both offline and while the show is live</li>
 					<li class="fragment">Robustness</li>
 				</ul>
 			</section>
@@ -338,6 +313,9 @@ Restate where we are
 				<ul>
 					<li class="fragment">Openess to other platforms</li>
 					<li class="fragment">Talent is really hard</li>
+					<li class="fragment">State machine + encapsulation in UE worked really well</li>
+					<li class="fragment">Local config in JSON is very painful</li>
+					<li class="fragment">Git can work with non technical team members with handholding</li>
 				</ul>
 			</section>
 			<section>
