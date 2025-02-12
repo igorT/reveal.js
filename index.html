@@ -44,6 +44,16 @@
 					<h4 style="margin-right: 130px">Igor Terzic</h4>
 				</div>
 			</section>
+			<section>
+				<h2>
+					Plan for today
+				</h2>
+				<ul>
+					<li class="fragment">Bacgkround and context</li>
+					<li class="fragment">Technical details</li>
+					<li class="fragment">Launch & results</li>
+				</ul>
+			</section>
 
 			<section>
 				<h2>
@@ -52,7 +62,7 @@
 				<ul>
 					<li class="fragment">Company and project background</li>
 					<li class="fragment">Goals</li>
-					<li class="fragment">Team</li>
+					<li class="fragment">Resources</li>
 					<li class="fragment">Timelines & plan</li>
 					<li class="fragment">Technical architecture</li>
 					<li class="fragment">Launch</li>
@@ -102,17 +112,19 @@
 					<li class="fragment">Had an existing relationship with a performer who had a 3D character</li>
 				</ul>
 			</section>
-
+			<section>
+				<h2>Project:</h2>
+				<h3>Launch a high production value interactive virtual show</h3>
+			</section>
 			<section>
 				<h2>Project thesis:</h2>
 				<ul>
 					<li class="fragment">Lots of people stream using simple 2D or 3D characters online</li>
+					<li class="fragment">We have technical ability to create much higher production value content</li>
 					<li class="fragment">A much higher production value, more interactive content would attract
 						more
 						fans</li>
 					<li class="fragment">We can scale to more characters</li>
-					<li class="fragment">Start in-house, directly working with talent scaling one by one, then
-						more scale later</li>
 				</ul>
 			</section>
 			<section>
@@ -178,15 +190,16 @@
 				</ul>
 			</section>
 			<section>
-				<h2>Team</h2>
+				<h2>Resources available</h2>
 			</section>
 			<section>
-				<h2>Core Team:</h2>
+				<h2>Team:</h2>
 				<ul>
 					<li>Me</li>
 					<li>3D Modeler with some Unreal Engine experience</li>
-					<li>Part time software dev</li>
-					<li>Part time cofounder with software experience</li>
+					<li>Motion capture technician</li>
+					<li>Software dev, part time</li>
+					<li>Cofounder with software experience, part time</li>
 					<li>Contractors</li>
 				</ul>
 			</section>
@@ -194,15 +207,16 @@
 				<h2>Wider company support:</h2>
 				<ul>
 					<li>Self taught Unreal Engineer</li>
-					<li>Proof of concept: streaming interactive game, capturing Twitch/TikTok events</li>
+					<li>Experienced VTuber</li>
 					<li>Talent management, contractors, promotional budget</li>
 				</ul>
 			</section>
 			<section>
-				<p>Pre existing work:</p>
-				<p>High quality 3D model, motion capture setup, validated streaming, a proof of concept codebase
-					we
-					acquired that had a basic interactive streaming</p>
+				<h2>Existing work:</h2>
+				<ul>
+					<li>Acquired tech: initial proof of concept of streaming interactive game capturing Twitch/TikTok events</li>
+					<li>High quality 3D model, motion capture setup, </li>
+				</ul>
 			</section>
 
 			<section>
@@ -213,9 +227,11 @@
 					<li class="fragment">4 weeks: Final polish, testing and launch prep</li>
 				</ul>
 			</section>
+			<!--
 			<section>
 Restate where we are				
 			</section>
+			-->
 			<!-- appendix!!!! -->
 
 
@@ -223,7 +239,6 @@ Restate where we are
 				<p>Decision time: We have an existing proof of concept, that will be developed further, do we
 					develop
 					together, or separately</p>
-				<p>Tradeoffs</p>
 			</section>
 			<section>
 				<h2>Technical design</h2>
@@ -237,25 +252,47 @@ Restate where we are
 
 			<section>
 				<p>Decision time: what to keep in Unreal Engine and what to move out into code</p>
-				<p>Tradeoffs</p>
-				<p>Kept things mostly in UE</p>
 			</section>
 			<section>
 				<img height="650"  src="./blueprint	.png">
 			</section>
 			<section>
+				<h2>Goals for the structure of Unreal Engine:</h2>
+				<ul>
+					<li class="fragment">Make it as easy as possible for artists and unreal devs to add content, and modify things,
+						daily
+						while safe as possible</li>
+					<li class="fragment">Make runtime both on rails and easy to change live</li>
+					<li class="fragment">Make everything easily changeabla, like game size, etc.</li>
+					<li class="fragment">Robustness</li>
+				</ul>
+			</section>
+			<section>
 				<img height="650"  src="./UE.png">
+				<aside class="notes">
+					State machine allows us to easily do real time changes, operator ran
+				</aside>
+			</section>
+			<section>
+				<h2>Pre-launch</h2>
+				<ul>
+					<li class="fragment">Testing and robustness</li>
+					<li class="fragment">Plan and practice for failures</li>
+					<li class="fragment">It's a live show, practice</li>
+					<li class="fragment">In universe narrative explanations</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Analytics & monitoring:</h2>
+				<ul>
+					<li class="fragment">Live monitoring</li>
+					<li class="fragment">Platform analytics</li>
+					<li class="fragment">Video capture</li>
+					<li class="fragment">Mixpanel</li>
+				</ul>
 			</section>
 
-			<section>
-				<h2>Goals for the structure of Unreal Engine:</h2>
-				<p>Make it as easy as possible for artists and unreal devs to add content, and modify things,
-					daily
-					while safe as possible</p>
-				<p>Make runtime both on rails and easy to change live</p>
-				<p>Make everything easily changeabla, like game size, etc.</p>
-				<p>Robustness</p>
-			</section>
+			<!--
 
 			<section>
 				<p>Isolated server data handling and graphql</p>
@@ -270,45 +307,38 @@ Restate where we are
 				<p>Tradeoffs</p>
 				<p>Kept things mostly in UE</p>
 			</section>
-			<section>
-				<p>Testing and robustness</p>
-				<p>Manual testing</p>
-				<p>Plan and practice for failures</p>
-				<p>It's a live show, practice</p>
-				<p>In universe narrative explanations</p>
-			</section>
-			<section>
-				<p>Analytics:</p>
-				<p>Platform analytics</p>
-				<p>Video capture</p>
-				<p>Mixpanel</p>
-			</section>
+			-->
 			<section>
 				<h2>Launch:</h2>
-				<ul></ul>
+				<ul>
 					<li class="fragment">Promotion worked well, hundreds of viewers who stayed for the whole show</li>
 					<li class="fragment">Sharp dropoff, ending at ~20 ACV</li>
 				</ul>
 			</section>
 			<section>
-				<p>Iteration:</p>
-				<p>Noticed TikTok</p>
+				<h2>Iteration land:</h2>
+				<ul>
+					<li class="fragment">Daily process of coming up with ideas, testing and iterating</li>
+					<li class="fragment">Noticed TikTok spikes</li>
+					<li class="fragment">Iterated on TikTok</li>
+					<li class="fragment">Sunset Twitch, TikTok only dev</li>
+					<li class="fragment">Peaked at 1000+ viewers</li>
+					<li class="fragment">Configurable project super helpful</li>
+				</ul>
 			</section>
 			<section>
-				<p>Configurable project super helpful</p>
+				<h2>Outcome:</h2>
+				<ul>
+					<li class="fragment">Validated the thesis</li>
+					<li class="fragment">Long term talent management issues</li>
+				</ul>
 			</section>
 			<section>
-				<p>Sunset Twitch, TikTok only dev</p>
-			</section>
-			<section>
-				<p>Peaked at 1000+ viewers</p>
-			</section>
-			<section>
-				<p>Outcome:</p>
-				<p>Validated but</p>
-			</section>
-			<section>
-				<p>Learnings?</p>
+				<h2>Learnings:</h2>
+				<ul>
+					<li class="fragment">Openess to other platforms</li>
+					<li class="fragment">Talent is really hard</li>
+				</ul>
 			</section>
 			<section>
 				<h2>Appendix</h2>
